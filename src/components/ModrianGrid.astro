@@ -40,7 +40,7 @@ body {
   gap: 2rem;
   padding: 2rem;
   margin: 0;
-  animation: resize 8000ms ease infinite both;
+  animation: resize 16s ease infinite both;
 }
 .content {
   display: grid;
@@ -52,31 +52,44 @@ body {
   background-color: var(--backup-bg-color, white);
 }
 .item:nth-child(1) {
-  animation: colorChange 8000ms ease 0s infinite both;
+  animation: colorChange 16s ease 0s infinite both;
 }
 .item:nth-child(3) { 
-  animation: colorChange 8000ms ease 2000ms infinite both;
+  animation: colorChange 16s ease 4000ms infinite both;
 }
 .item:nth-child(7) {
-  animation: colorChange 8000ms ease -2000ms infinite both;
+  animation: colorChange 16s ease -4000ms infinite both;
 }
 .item:nth-child(9) {
-  animation: colorChange 8000ms ease 4000ms infinite both;
+  animation: colorChange 16s ease 8000ms infinite both;
 }
 
 @keyframes colorChange {
   0% {
     background-color: #989494;
   }
+  10% {
+    background-color: #989494;
+  }
   25% {
+    background-color: #C32F29;
+  }
+  35% {
     background-color: #C32F29;
   }
   50% {
     background-color: #343F73;
   }
+  60% {
+    background-color: #343F73;
+  }
   75% {
     background-color: #F9CC37;
   }
+  85% {
+    background-color: #F9CC37;
+  }
+  
   100% {
     background-color: #989494;
   }
@@ -86,7 +99,15 @@ body {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
+  10% {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
   25% {
+    grid-template-columns: 1fr 2fr 4fr;
+    grid-template-rows: 1fr 2fr 4fr;
+  }
+  35% {
     grid-template-columns: 1fr 2fr 4fr;
     grid-template-rows: 1fr 2fr 4fr;
   }
@@ -94,7 +115,15 @@ body {
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 1fr 6fr 1fr;
   }
+  60% {
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 6fr 1fr;
+  }
   75% {
+    grid-template-columns: 4fr 2fr 1fr;
+    grid-template-rows: 4fr 2fr 1fr;
+  }
+  85% {
     grid-template-columns: 4fr 2fr 1fr;
     grid-template-rows: 4fr 2fr 1fr;
   }
