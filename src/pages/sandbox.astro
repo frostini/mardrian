@@ -6,10 +6,12 @@ import TitleSubText from "../components/atoms/TitleSubText.astro"
 <ModrianGrid>
   <div class="content">
     <div class="item left">
-      <TitleText text="hello world" color="blue"/>
-      <TitleSubText text="hello world" color="blue">
+      <TitleText color="blue">
+        hello
+      </TitleText>
+      <TitleText >
         hello <span class="bold red">other</span> world
-        </TitleSubText>
+      </TitleText>
     </div>
     <div class="item right">
       <h1> hello world </h1>
@@ -19,6 +21,9 @@ import TitleSubText from "../components/atoms/TitleSubText.astro"
 </MondrianGrid>
 
 <style>
+  .red {
+    background-color:
+  }
   .bold {
     font-weight: 600;
   }
@@ -28,10 +33,12 @@ import TitleSubText from "../components/atoms/TitleSubText.astro"
   .item {
     border-color: #23262d;
     border-width: 2rem;
-    
   }
   .left {border-style: none none solid solid ;}
-  .right {border-style: none solid solid solid ;}
+  .right {
+    border-style: none solid solid solid ;
+    animation: colorChange 16s ease -12000ms infinite both;
+  }
   .content {
     grid-template-columns: 1fr 1fr;
     background-color: #ffff;

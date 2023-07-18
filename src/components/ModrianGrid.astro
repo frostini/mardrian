@@ -1,4 +1,6 @@
 ---
+import "../styles/theme.css"
+import "../styles/animations/colorChange.css"
 ---
 <div class="container">
   <div class="grid">
@@ -49,14 +51,14 @@ body {
   z-index: 1;
 } 
 .item {
-  background-color: var(--backup-bg-color, white);
+  background-color: var(--bg-color, white);
 }
 .item:nth-child(1) {
   animation: colorChange 16s ease 0s infinite both;
 }
-.item:nth-child(3) { 
+/* .item:nth-child(3) { 
   animation: colorChange 16s ease -12000ms infinite both;
-}
+} */
 .item:nth-child(7) {
   animation: colorChange 16s ease -4000ms infinite both;
 }
@@ -64,36 +66,7 @@ body {
   animation: colorChange 16s ease -8000ms infinite both;
 }
 
-@keyframes colorChange {
-  0% {
-    background-color: #989494;
-  }
-  15% {
-    background-color: #989494;
-  }
-  25% {
-    background-color: #C32F29;
-  }
-  40% {
-    background-color: #C32F29;
-  }
-  50% {
-    background-color: #343F73;
-  }
-  65% {
-    background-color: #343F73;
-  }
-  75% {
-    background-color: #F9CC37;
-  }
-  90% {
-    background-color: #F9CC37;
-  }
-  
-  100% {
-    background-color: #989494;
-  }
-}
+
 @keyframes resize {
   0% {
     grid-template-columns: 1fr 1fr 1fr;

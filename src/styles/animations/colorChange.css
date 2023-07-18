@@ -1,0 +1,32 @@
+@import "../theme.css";
+
+@keyframes colorChange {
+  0% {
+    background-color: var(--grey-color)
+  }
+  15% {
+    background-color: var(--grey-color)
+  }
+  25% {
+    background-color: var(--red-color);
+  }
+  40% {
+    background-color: var(--red-color);
+  }
+  50% {
+    background-color: var(--blue-color);
+  }
+  65% {
+    background-color: var(--blue-color);
+  }
+  75% {
+    background-color: var(--yellow-color);
+  }
+  90% {
+    background-color: var(--yellow-color);
+  }
+  
+  100% {
+    background-color: var(--grey-color)
+  }
+}
