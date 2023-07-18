@@ -1,4 +1,23 @@
 ---
 import ModrianGrid from "../components/ModrianGrid.astro";
 ---
-<ModrianGrid/>
+<ModrianGrid>
+  <div class="content">
+    <div class="">
+      <h1> hello world </h1>
+    </div>
+    <div class="">
+      <h1> hello world </h1>
+    </div>
+    
+  </div>
+</MondrianGrid>
+
+<style>
+  .content {
+    grid-template-columns: 1fr 1fr;
+    background-color: #23262d;
+    margin: 0 25vw 30vh;
+    display: grid;
+  }
+</style>
