@@ -3,10 +3,10 @@ import ModrianGrid from "../components/ModrianGrid.astro";
 ---
 <ModrianGrid>
   <div class="content">
-    <div class="">
+    <div class="item left">
       <h1> hello world </h1>
     </div>
-    <div class="">
+    <div class="item right">
       <h1> hello world </h1>
     </div>
     
@@ -14,10 +14,17 @@ import ModrianGrid from "../components/ModrianGrid.astro";
 </MondrianGrid>
 
 <style>
+  .item {
+    border-color: #23262d;
+    border-width: 2rem;
+    
+  }
+  .left {border-style: none none solid solid ;}
+  .right {border-style: none solid solid solid ;}
   .content {
     grid-template-columns: 1fr 1fr;
-    background-color: #23262d;
-    margin: 0 25vw 30vh;
+    background-color: #ffff;
+    margin: 2rem 15vw 32.5vh;
     display: grid;
   }
 </style>
