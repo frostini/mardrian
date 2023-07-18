@@ -1,13 +1,15 @@
 ---
-import '@fontsource/montserrat';
-const { text, color } = Astro.props;
+import '@fontsource-variable/montserrat';
+const { text, color, weight } = Astro.props;
 ---
-<h1>{text}</h1>
+<h1>{ text ? text : <slot/> }</h1>
 
-<style define:vars={{ color }}>
+<style define:vars={{ color, weight }}>
   
 h1 {
   font-family: "montserrat";
-  color: var(--color);
+  font-size: 2.6rem;
+  color: var(--color, inherit);
+  font-weight: var(--weight, 300);
 }
 </style>
