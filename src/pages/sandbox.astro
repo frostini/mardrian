@@ -1,10 +1,15 @@
 ---
 import ModrianGrid from "../components/ModrianGrid.astro";
+import TitleText from "../components/atoms/TitleText.astro"
+import TitleSubText from "../components/atoms/TitleSubText.astro"
 ---
 <ModrianGrid>
   <div class="content">
     <div class="item left">
-      <h1> hello world </h1>
+      <TitleText text="hello world" color="blue"/>
+      <TitleSubText text="hello world" color="blue">
+        hello <span class="bold red">other</span> world
+        </TitleSubText>
     </div>
     <div class="item right">
       <h1> hello world </h1>
@@ -14,6 +19,12 @@ import ModrianGrid from "../components/ModrianGrid.astro";
 </MondrianGrid>
 
 <style>
+  .bold {
+    font-weight: 600;
+  }
+  .red {
+    color: #C32F29;
+  }
   .item {
     border-color: #23262d;
     border-width: 2rem;

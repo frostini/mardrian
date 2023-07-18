@@ -1,0 +1,13 @@
+---
+import '@fontsource/montserrat';
+const { text, color } = Astro.props;
+---
+<h1>{text}</h1>
+
+<style define:vars={{ color }}>
+  
+h1 {
+  font-family: "montserrat";
+  color: var(--color);
+}
+</style>
