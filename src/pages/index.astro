@@ -1,11 +1,107 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
-import Greeting from '../components/Greeting.jsx';
-const pageTitle = 'Waddap';
-const greetings = ["Hi", "Hello", "Howdy", "Het There"]
+import "../styles/animations/colorChange.css"
+import "../styles/animations/waving.css"
+import "../styles/theme.css"
+import ModrianGrid from "../components/ModrianGrid.astro";
+import TitleText from "../components/atoms/TitleText.astro"
+import TitleSubText from "../components/atoms/TitleSubText.astro"
 ---
+<ModrianGrid>
+  <div class="content">
+    <div class="item left">
+      <div>
+        <TitleText>
+          Hello <span class="wave">&#128075;</span>
+        </TitleText>
+        <TitleText>
+          I'm <span class="bold">Marlon J. Frausto</span>
+        </TitleText>
+        <TitleText>
+          Senior Full-Stack
+        </TitleText>
+        <TitleText weight="600">
+          Designer <span class="star bold">+</span> Developer
+        </TitleText>
+      </div>
+      <div>
+        <TitleText weight={600}>
+          <a class="about" href="/about/"> about </a>
+        </TitleText>
+        <TitleText weight={600}>
+          <a class="blog" href="/blog/"> blog </a>
+        </TitleText>
+        <TitleText weight={600}>
+          <a class="contact" href="/contact/"> contact / hire</a>
+        </TitleText>
+      </div>
+    </div>
+    <div class="item right">
+      <div class="g-child">
+          <img class="image" src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width="100%" height="100%" alt="Astro">
+      </div>
+      
+    </div>
+    
+  </div>
+</MondrianGrid>
 
-<BaseLayout pageTitle={pageTitle}>
-	<h2>Blog subtitle</h2>
-	<Greeting client:load messages={greetings} /> 
-</BaseLayout>
+<style>
+  .about {
+    color: var(--yellow-color);
+  }
+  .blog {
+    color: var(--red-color);
+  }
+  .contact {
+    color: var(--blue-color);
+  }
+  .g-child {
+    place-self: center center;
+  }
+  .wave {
+    animation-name: waving;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+}
+  .star {
+    animation: colorChange 16s ease -12000ms infinite both;
+  }
+  .bold {
+    font-weight: 600;
+  }
+  .red {
+    color: #C32F29;
+  }
+  .left {
+		background-color: white;
+		display: grid;
+    padding-left: 2rem;
+  }
+  .right {
+    display: grid;
+    animation: colorChangeBackground 16s ease -12000ms infinite both;
+		outline: 2rem solid #23262d;
+  }
+  .content {
+    background-color: #23262d;
+		outline: 2rem solid #23262d;
+		grid-column-start: 2;
+		grid-row-start: 1;
+		grid-template-columns: 4fr 2fr;
+		grid-template-rows: 1fr;
+    display: grid;
+  }
+	@media (orientation: landscape) {
+		.content {
+			grid-template-columns: 2fr 1fr;
+		}
+	}
+
+	@media (orientation: portrait) {
+		.content {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
