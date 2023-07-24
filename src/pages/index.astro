@@ -6,7 +6,7 @@ import ModrianGrid from "../components/ModrianGrid.astro";
 import TitleText from "../components/atoms/TitleText.astro"
 import TitleSubText from "../components/atoms/TitleSubText.astro"
 ---
-<ModrianGrid>
+<ModrianGrid contentHeight="100vh">
   <div class="content">
     <div class="item left">
       <div>
@@ -28,7 +28,7 @@ import TitleSubText from "../components/atoms/TitleSubText.astro"
           <a class="about" href="/about/"> about </a>
         </TitleText>
         <TitleText weight={600}>
-          <a class="blog" href="/blog/"> blog </a>
+          <a class="blog" href="/mobilegation/"> blog </a>
         </TitleText>
         <TitleText weight={600}>
           <a class="contact" href="/contact/"> contact / hire</a>
@@ -41,7 +41,6 @@ import TitleSubText from "../components/atoms/TitleSubText.astro"
       </div>
       
     </div>
-    
   </div>
 </MondrianGrid>
 
@@ -77,16 +76,16 @@ import TitleSubText from "../components/atoms/TitleSubText.astro"
   .left {
 		background-color: white;
 		display: grid;
-    padding-left: 2rem;
+    padding-left: 1rem;
   }
   .right {
     display: grid;
     animation: colorChangeBackground 16s ease -12000ms infinite both;
-		outline: 2rem solid #23262d;
+		outline: 1rem solid #23262d;
   }
   .content {
     background-color: #23262d;
-		outline: 2rem solid #23262d;
+		outline: 1rem solid #23262d;
 		grid-column-start: 2;
 		grid-row-start: 1;
 		grid-template-columns: 4fr 2fr;

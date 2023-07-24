@@ -1,6 +1,24 @@
+@import '@fontsource-variable/montserrat';
+h1,
+h2,
+h3,
+h4,
+h5
+ol,
+ul,
+li,
+div,
+p,
+a,
+span {
+font-family: "montserrat";
+}
+
 :root {
   --red-color: #C32F29;
   --blue-color: #343F73;
   --yellow-color: #F9CC37;
   --grey-color:   #727171;
+  --light-grey-color: #c5bfbfe6;
+  --dark-color: #23262d;
 }
