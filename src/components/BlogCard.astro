@@ -1,0 +1,50 @@
+---
+import "../styles/theme.css"
+const { color } = Astro.props
+---
+<div class:list={['blog-card', color]}>
+  <div class="blog-card-title">
+    <h3>react vs X</h3>
+  </div>
+  <div class="blog-card-body">
+    <div class="blog-card-tags-section">
+      <h4>tags</h3>
+      <div class="blog-card-tags-container">
+        <h5>front-end</h5>
+        <h5>frameworks</h5>
+        <h5>react</h5>
+        <h5>co-location</h5>
+      </div>
+    </div>
+    <div class="blog-card-link">
+      <h3>
+        <a href="/blog/">view post</a>
+      </h3>
+    </div>
+  </div>
+</div>
+
+<style define:vars={{ color }}>
+
+
+
+
+
+  .blog-card-tags-container {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .blog-card-tags-container h5 {
+    border: 1px solid var(--color);
+  }
+  h3,
+  h3 a {
+    color: var(--red-color)
+  }
+  .blog-card {
+    border: 1rem solid var(--dark-color);
+  }
+  .blog-card-body {
+    border-top: 1rem solid var(--dark-color);
+  }
+</style>

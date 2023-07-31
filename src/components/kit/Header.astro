@@ -1,0 +1,86 @@
+---
+---
+<div class="header">
+  <div class="header-logo">
+    <h3> marlon <b>frausto</b> </h3>
+  </div>
+  <ul class="header-navigation">
+    <li>
+      <a href="/">home</a>
+    </li>
+    <li class="navigation--h-split">
+      <a href="/">about</a>
+    </li>
+    <li>
+      <a href="/">blog</a>
+    </li>
+  </ul>
+  <div class="header-cta">
+    <a href="/">contact <br>/ hire</a>
+  </div>
+</div>
+
+<style>
+.header {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 5fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.5rem;
+  background-color: var(--dark-color);
+  padding: 0.5rem;
+  height: 100%;
+}
+/* header logo section */
+.header-logo {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  background-color: white;
+  padding-left: 1rem;
+}
+.header-logo h3 {
+  margin: 0;
+  font-weight: 300;
+}
+/* header naviation section */
+.header-navigation {
+  grid-column-end: 2;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  padding: 0;
+  text-align: center;
+  place-items: stretch;
+  margin: 0;
+  background-color: white;
+}
+li {
+  font-weight: 600;
+  list-style: none;
+  background-color: white;
+}
+.header-navigation li a {
+  color: var(--dark-color);
+  text-decoration: none;
+}
+/* header cta section */
+.header-cta {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background-color: var(--blue-color);
+  text-align: center;
+  align-items: center;
+  display: grid;
+  animation: colorChangeBackground 16s ease -12000ms infinite both;
+}
+.header-cta a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+</style>

@@ -1,0 +1,46 @@
+---
+import "../styles/theme.css";
+import Header from "../components/kit/Header.astro";
+const { pageTitle } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle ? pageTitle : "Marlon Frausto"}</title>
+  </head>
+  <body>
+    <div class="scene-container">
+      <header>
+        <Header/>
+      </header>
+      <main>
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>
+
+<style>
+div.scene-container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 7fr 1fr;
+  grid-auto-rows: 1fr;
+  background-color: aqua;
+}
+header {
+  grid-row-start: 2;
+}
+main {
+  overflow: auto;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  background-color: var(--dark-color);
+  grid-auto-rows: 1fr;
+}
+</style>

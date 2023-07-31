@@ -1,4 +1,20 @@
 @import '@fontsource-variable/montserrat';
+:root {
+  --red-color: #C32F29;
+  --blue-color: #271AC2;
+  --white-color: #fff;
+  /* --blue-color: #3122D9; */
+  --yellow-color: #F9CC37;
+  --grey-color:   #727171;
+  --light-grey-color: #D9D9D9;
+  --dark-color: #23262d;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
 h1,
 h2,
 h3,
@@ -12,13 +28,4 @@ p,
 a,
 span {
 font-family: "montserrat";
-}
-
-:root {
-  --red-color: #C32F29;
-  --blue-color: #343F73;
-  --yellow-color: #F9CC37;
-  --grey-color:   #727171;
-  --light-grey-color: #c5bfbfe6;
-  --dark-color: #23262d;
 }

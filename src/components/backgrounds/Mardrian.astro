@@ -1,0 +1,110 @@
+---
+import "../../styles/theme.css";
+import "../../styles/animations/colorChange.css";
+const { contentHeight } = Astro.props;
+---
+<div class="container">
+  <div class="grid">
+    <div class="grid-row top">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <div class="grid-row middle">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+    <div class="grid-row bottom">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </div>
+  <div class="content">
+    <slot />
+  </div>
+</div>
+
+<style define:vars={{ contentHeight }}>
+.container {
+  display: grid;
+  height: var( --contentHeight);
+}
+.grid {
+  margin: 0;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 6fr 1fr; 
+  display: grid;
+  grid-column-start: 1; 
+  grid-row-start: 1;
+  z-index: 0;
+  gap: 0.5rem;
+}
+.content {
+  display: grid;
+  grid-column-start: 1; 
+  grid-row-start: 1;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  z-index: 1;
+}
+.grid-row {
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+    gap: 0.5rem;
+}
+.top {
+  grid-row-start: 1;
+  animation: gridRowResize 8s ease -4000ms infinite both;
+}
+.middle {
+  grid-row-start: 2;
+}
+.bottom {
+  grid-row-start: 3;
+  animation: gridRowResize 8s ease infinite both;
+}
+.item {
+  background-color: var(--white-color, white);
+}
+.top .item:nth-child(3) {
+  animation: colorChangeBackground 8s ease -2s infinite both;
+}
+.middle .item {
+  /* to hide to vertical line pixels in mobile*/
+  /* display: none; */
+}
+.bottom .item:nth-child(1) {
+  animation: colorChangeBackground 8s ease 0s infinite both;
+}
+@keyframes gridRowResize {
+  0% {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  15% {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  25% {
+    grid-template-columns: 1fr 2fr 4fr;
+  }
+  40% {
+    grid-template-columns: 1fr 2fr 4fr;
+  }
+  50% {
+    grid-template-columns: 1fr 4fr 1fr;
+  }
+  65% {
+    grid-template-columns: 1fr 4fr 1fr;
+  }
+  75% {
+    grid-template-columns: 4fr 2fr 1fr;
+  }
+  90% {
+    grid-template-columns: 4fr 2fr 1fr;
+  }
+  100% {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+</style>
