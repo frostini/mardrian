@@ -7,6 +7,13 @@
   display: inline-block;
 } */
 
+.waving {
+    animation-name: waving;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+}
 @keyframes waving {
   0% {
       transform: rotate( 0.0deg)

@@ -7,12 +7,14 @@ import TitleText from "../components/atoms/TitleText.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 <SiteLayout pageTitle="hellaz">
-  <Mardrian contentHeight="100%">
+  <Mardrian containerHeight="100%">
     <div class="hero-text">
       <div class="hero">
-          <TitleText text="hellloooo iplurabus ipsum and stuff"/>
-          <TitleText text="hellloooo iplurabus ipsum and stuff"/>
-          <TitleText text="hellloooo iplurabus ipsum and stuff"/>
+        <div class="her">
+          <h2 class="light-text">Hello <span class="waving">👋</span></h2>
+          <h3 class=" light-text">thanks for visiting my site <span class="">😬</span></h3>
+          <h6 class="light-text" style="margin-top:1rem;">I'm a senior full-stack designer + developer specializing in component-based design systems, customer development, and agile/lean methodologies.</h6>
+        </div>
       </div>
     </div>
   </Mardrian>
@@ -26,18 +28,37 @@ import SiteLayout from "../layouts/SiteLayout.astro";
   </div>
 </SiteLayout>
 <style>
-.hero {
-  overflow: auto;
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  background-color: white;
+  .her {
+    max-width: 900px;
+
+  }
+  .hero {
+    /* overflow: auto; */
+    overflow: scroll;
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: white;
+    padding: var(--size-300);
+    place-items: center;
+    /* border: 0.5rem solid var(--dark-color); */
+    /* max-width: 900px; */
+    /* grid-template-columns: 1fr; */
+    /* grid-template-rows: 1fr; */
+  }
+  .hero-text {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 6fr 1fr;
+    gap: 0.33rem;
+    /* place-items: center; */
+  }
+  @media screen and (min-width: 800px) and (min-height: 450px) and (orientation: landscape) {
+    .hero-text {
+      gap: 0.5rem;
+    }
 }
-.hero-text {
-  display: grid;
-  grid-template-columns: 1fr 6fr 1fr;
-  grid-template-rows: 1fr 6fr 1fr;
-  gap: 0.5rem;
-}
+
 </style>

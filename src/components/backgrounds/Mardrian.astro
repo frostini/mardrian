@@ -1,7 +1,7 @@
 ---
 import "../../styles/theme.css";
 import "../../styles/animations/colorChange.css";
-const { contentHeight } = Astro.props;
+const { containerHeight } = Astro.props;
 ---
 <div class="container">
   <div class="grid">
@@ -26,85 +26,104 @@ const { contentHeight } = Astro.props;
   </div>
 </div>
 
-<style define:vars={{ contentHeight }}>
-.container {
-  display: grid;
-  height: var( --contentHeight);
-}
-.grid {
-  margin: 0;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 6fr 1fr; 
-  display: grid;
-  grid-column-start: 1; 
-  grid-row-start: 1;
-  z-index: 0;
-  gap: 0.5rem;
-}
-.content {
-  display: grid;
-  grid-column-start: 1; 
-  grid-row-start: 1;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  z-index: 1;
-}
-.grid-row {
-    grid-template-columns: 1fr 1fr 1fr;
+<style define:vars={{ containerHeight }}>
+  .container {
     display: grid;
-    gap: 0.5rem;
-}
-.top {
-  grid-row-start: 1;
-  animation: gridRowResize 8s ease -4000ms infinite both;
-}
-.middle {
-  grid-row-start: 2;
-}
-.bottom {
-  grid-row-start: 3;
-  animation: gridRowResize 8s ease infinite both;
-}
-.item {
-  background-color: var(--white-color, white);
-}
-.top .item:nth-child(3) {
-  animation: colorChangeBackground 8s ease -2s infinite both;
-}
-.middle .item {
-  /* to hide to vertical line pixels in mobile*/
-  /* display: none; */
-}
-.bottom .item:nth-child(1) {
-  animation: colorChangeBackground 8s ease 0s infinite both;
-}
-@keyframes gridRowResize {
-  0% {
+    height: var( --containerHeight);
+  }
+  .grid {
+    margin: 0;
+    z-index: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 6fr 1fr;
+    grid-column: 1; 
+    grid-row: 1;
+    gap: 0.33rem;
+  }
+  .grid-row {
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.33rem;
   }
-  15% {
-    grid-template-columns: 1fr 1fr 1fr;
+  .top {
+    grid-row: 1;
+    animation: gridRowResize 8s ease -4000ms infinite both;
   }
-  25% {
-    grid-template-columns: 1fr 2fr 4fr;
+  .middle {
+    grid-row: 2;
   }
-  40% {
-    grid-template-columns: 1fr 2fr 4fr;
+  .bottom {
+    grid-row: 3;
+    animation: gridRowResize 8s ease infinite both;
   }
-  50% {
-    grid-template-columns: 1fr 4fr 1fr;
+  .item {
+    background-color: var(--white-color, white);
   }
-  65% {
-    grid-template-columns: 1fr 4fr 1fr;
+  .top .item:nth-child(3) {
+    animation: colorChangeBackground 8s ease -2s infinite both;
   }
-  75% {
-    grid-template-columns: 4fr 2fr 1fr;
+  .bottom .item:nth-child(1) {
+    animation: colorChangeBackground 8s ease 0s infinite both;
   }
-  90% {
-    grid-template-columns: 4fr 2fr 1fr;
+  /* content container styling */
+  .content {
+    z-index: 1;
+    display: grid;
+    grid-column: 1; 
+    grid-row: 1;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    min-height: 0;
   }
-  100% {
-    grid-template-columns: 1fr 1fr 1fr;
+  @keyframes gridRowResize {
+    0% {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    15% {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    25% {
+      grid-template-columns: 1fr 2fr 4fr;
+    }
+    40% {
+      grid-template-columns: 1fr 2fr 4fr;
+    }
+    50% {
+      grid-template-columns: 1fr 4fr 1fr;
+    }
+    65% {
+      grid-template-columns: 1fr 4fr 1fr;
+    }
+    75% {
+      grid-template-columns: 4fr 2fr 1fr;
+    }
+    90% {
+      grid-template-columns: 4fr 2fr 1fr;
+    }
+    100% {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
-}
+/* to switch colorchange positions to match header vertical position swap */
+  @media screen and (min-width: 800px) and (min-height: 450px) and (orientation: landscape) {
+    .grid {
+      gap: 0.5rem;
+    }
+    .grid-row {
+      gap: 0.5rem;
+    }
+    .top .item:nth-child(1) {
+      animation: colorChangeBackground 8s ease -2s infinite both;
+    }
+    .top .item:nth-child(3) {
+      animation: none;
+    }
+    .bottom .item:nth-child(3) {
+      animation: colorChangeBackground 8s ease 0s infinite both;
+    }
+    .bottom .item:nth-child(1) {
+      animation: none;
+    }
+  }
 </style>

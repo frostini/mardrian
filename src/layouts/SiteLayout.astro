@@ -22,25 +22,27 @@ const { pageTitle } = Astro.props;
     </div>
   </body>
 </html>
-
 <style>
-div.scene-container {
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 7fr 1fr;
-  grid-auto-rows: 1fr;
-  background-color: aqua;
-}
-header {
-  grid-row-start: 2;
-}
-main {
-  overflow: auto;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  background-color: var(--dark-color);
-  grid-auto-rows: 1fr;
-}
+  div.scene-container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 7fr 1fr;
+  }
+  header {
+    grid-row: 3;
+  }
+  main {
+    overflow: auto;
+    grid-row: 1/3;
+  }
+  @media screen and (min-width: 800px) and (min-height: 450px) and (orientation: landscape) {
+    header {
+      grid-row: 1/2;
+    }
+    main {
+      grid-row: 2/4;
+    }
+  }
 </style>
