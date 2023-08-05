@@ -47,30 +47,15 @@ h6,
   font-weight: var(--thin-font);
 }
 * {
+  margin: 0;
   box-sizing: border-box;
   font-family: montserrat, sans-serif !important;
 }
+html,
 body {
-  margin: 0;
   background-color: var(--dark-color);
   font-size: var(--base-type-size);
-  /* line-height: 1.125rem; */
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ol,
-ul,
-li,
-div,
-p,
-a,
-span {
-/* font-family: "montserrat"; */
-margin: 0;
+  height: 100%;
 }
 a {
   color: var(--dark-color);
