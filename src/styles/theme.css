@@ -53,7 +53,7 @@ h6,
 body {
   margin: 0;
   background-color: var(--dark-color);
-  font-size: var(--base-type-size, );
+  font-size: var(--base-type-size);
   /* line-height: 1.125rem; */
 }
 h1,
