@@ -71,3 +71,6 @@ span {
 font-family: "montserrat";
 margin: 0;
 }
+a {
+  color: var(--dark-color);
+}
