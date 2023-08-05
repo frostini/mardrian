@@ -48,6 +48,7 @@ h6,
 }
 * {
   box-sizing: border-box;
+  font-family: montserrat, sans-serif !important;
 }
 body {
   margin: 0;
@@ -68,7 +69,7 @@ div,
 p,
 a,
 span {
-font-family: "montserrat";
+/* font-family: "montserrat"; */
 margin: 0;
 }
 a {
