@@ -24,7 +24,10 @@ const { pageTitle } = Astro.props;
 </html>
 <style>
   div.scene-container {
+/* restating width in vw xas fallback for dvw. can remove in 2024*/
+    width: 100vw;
     width: 100dvw;
+/* restating height in vh xas fallback for dvh. can remove in 2024*/
     height: 100vh;
     height: 100dvh;
     display: grid;
