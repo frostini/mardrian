@@ -12,16 +12,16 @@ import SiteLayout from "../layouts/SiteLayout.astro";
       <div class="hero">
         <div class="her">
           <div>
-            <h5>blog post</span></h5>
-            <h3 class=" light-text">react vs x,<br> then vs now</h3>
+            <h4 style="color:var(--blue-color);">tech post</span></h4>
+            <h2 class=" light-text">react vs x,<br> then vs now</h2>
           </div>
           <div>
-            <h6>summary</h6>
-            <p class="light-text">What has changed in comparing react to oher frameworks over the last decade</p>
+            <h5>Summary</h5>
+            <h6 class="light-text">What has changed in comparing react to oher frameworks over the last decade</h6>
           </div>
-          <div>
-            <h6>sections</h6>
-            <ul>
+          <div class="summary">
+            <h5>Tags</h5>
+            <ul class="tag-cloud light-text h6">
               <li><a href="">topic here</a></li>
               <li><a href="">topic here</a></li>
               <li><a href="">topic here</a></li>
@@ -47,18 +47,38 @@ import SiteLayout from "../layouts/SiteLayout.astro";
   </div>
 </SiteLayout>
 <style>
-  .her div:nth-child(1) {
+.tag-cloud li {
+  list-style-type: none;
+  padding: var(--size-300);
+  margin: var(--size-300);
+  border: .25rem solid var(--dark-color);
+}
+.tag-cloud li a {
+  text-decoration: none;
+}
+.tag-cloud {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  /* .her div:nth-child(1) {
     display: grid;
     align-content: start;
+
+  } */
+  .her div:nth-child(2) h6 {
+    margin-top: var(--size-300);
   }
+  .her div:nth-child(2),
   .her div:nth-child(3) {
-    display: grid;
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
   }
-  .her div:nth-child(2) {
+  /* .her div:nth-child(2) {
     display: grid;
+    /* justify-content: start; */
     /* place-items: center; */
-  }
+  /* } */ 
   .her div:nth-child(4) {
     align-self: end;
     /* place-items: center; */
@@ -89,9 +109,12 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     grid-template-rows: 1fr 6fr 1fr;
     gap: 0.33rem;
   }
-  @media screen and (min-width: 800px) and (min-height: 450px) and (orientation: landscape) {
-    .hero-text {
-      gap: 0.5rem;
+  .summary {
+    display: none !important;
+  }
+  @media screen and (min-width: 500px) and (min-height: 450px) {
+    .summary {
+      display: block !important;
     }
 }
 
