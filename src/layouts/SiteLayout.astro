@@ -1,7 +1,7 @@
 ---
 import "../styles/theme.css";
 import Header from "../components/kit/Header.astro";
-const { pageTitle } = Astro.props;
+const { pageTitle, pageColor } = Astro.props;
 ---
 <html lang="en">
   <head>
@@ -22,12 +22,12 @@ const { pageTitle } = Astro.props;
     </div>
   </body>
 </html>
-<style>
+<style define:vars={{ pageColor }}>
   div.scene-container {
-/* restating width in vw xas fallback for dvw. can remove in 2024*/
+/* restating width in vw as fallback for dvw. can remove vw in 2024*/
     width: 100vw;
     width: 100dvw;
-/* restating height in vh xas fallback for dvh. can remove in 2024*/
+/* restating height in vh as fallback for dvh. can remove vh in 2024*/
     height: 100vh;
     height: 100dvh;
     display: grid;
@@ -40,6 +40,7 @@ const { pageTitle } = Astro.props;
   main {
     overflow: auto;
     grid-row: 1/3;
+    background-color: var(--pageColor);
   }
   @media screen and (min-width: 800px) and (min-height: 450px) and (orientation: landscape) {
     header {

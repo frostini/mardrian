@@ -1,0 +1,25 @@
+---
+import TagCloud from "./kit/TagCloud.astro";
+---
+<div class="card">
+  <h4 class="light-text"><a href="">react vs framework, then vs now</a></h4>
+  <TagCloud/>
+  <div class="meta">
+    <h6>design</h6>
+    <i>last updated on<br>August 23rd, 2023</i>
+  </div>
+</div>
+<style>
+  .card {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    /* align-items: center; */
+  }
+  .meta {
+    display: grid;
+    grid-template-columns: 3fr 6fr;
+    align-items: center;
+  }
+</style>

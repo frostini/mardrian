@@ -1,0 +1,50 @@
+---
+---
+<div class="swag">
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+<style>
+  .swag div:nth-child(1){
+    background-color: var(--red-color);
+    grid-column: 1/5;
+  }
+  .swag div:nth-child(2){
+    background-color: var(--white-color);
+    grid-column: 5/8;
+  }
+  .swag div:nth-child(3){
+    background-color: var(--yellow-color);
+    grid-column: 8/9;
+  }
+  .swag div:nth-child(4){
+    background-color: var(--white-color);
+    grid-column: 9/16;
+  }
+  .swag div:nth-child(5){
+    background-color: var(--blue-color);
+    grid-column: 16/25;
+  }
+  /* .swag div:nth-child(6){
+    background-color: orange;
+    grid-column: 9/12;
+  }
+  .swag div:nth-child(7){
+    background-color: pink;
+    grid-column: 12/13;  
+  } */
+  .swag {
+    border: 0.33rem solid var(--dark-color);
+    border-style: solid none;
+    display: grid;
+    gap: 0.33rem;
+    height: var(--size-900);
+    background-color: var(--dark-color);
+    grid-template-columns: repeat(24, minmax(10px, 1fr));
+    grid-template-rows: minmax(0px, 1fr);
+    margin: 3rem 0rem;
+  }
+</style>

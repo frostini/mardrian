@@ -4,6 +4,7 @@ import "../styles/animations/waving.css";
 import "../styles/theme.css";
 import Mardrian from "../components/backgrounds/Mardrian.astro";
 import TitleText from "../components/atoms/TitleText.astro";
+import TagCloud from "../components/kit/TagCloud.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 <SiteLayout pageTitle="hellaz">
@@ -12,7 +13,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
       <div class="hero">
         <div class="her">
           <div>
-            <h4 style="color:var(--blue-color);">tech post</span></h4>
+            <h4 style="color:var(--blue-color);"><span style="color:var(--dark-color)">blog</span> / design</span></h4>
             <h2 class=" light-text">react vs x,<br> then vs now</h2>
           </div>
           <div>
@@ -21,13 +22,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
           </div>
           <div class="summary">
             <h5>Tags</h5>
-            <ul class="tag-cloud light-text h6">
-              <li><a href="">topic here</a></li>
-              <li><a href="">topic here</a></li>
-              <li><a href="">topic here</a></li>
-              <li><a href="">topic here</a></li>
-              <li><a href="">topic here</a></li>
-            </ul>
+            <TagCloud />
           </div>
           <div>
             <i>last updated on August 4th, 2023</i>
