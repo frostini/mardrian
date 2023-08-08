@@ -2,22 +2,18 @@
 import "../styles/animations/colorChange.css";
 import "../styles/animations/waving.css";
 import "../styles/theme.css";
-import Mardrian from "../components/backgrounds/Mardrian.astro";
-import TitleText from "../components/atoms/TitleText.astro";
 import ArtDivider from "../components/kit/ArtDivider.astro";
 import Card from "../components/Card.astro";
-import TagCloud from "../components/kit/TagCloud.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 <SiteLayout pageTitle="hellaz" pageColor="white">
   <div class="blog-index">
-    <div class="title">
+    <div class="blog-index--title">
       <h2><span class="light-text">the </span>blog</h2>
     </div>
-    <div class="entries">
+    <div class="blog-index--entries">
       <Card/>
-        <ArtDivider/>
-      
+      <ArtDivider />
       <Card/>
       <ArtDivider />
       <Card/>
@@ -29,13 +25,4 @@ import SiteLayout from "../layouts/SiteLayout.astro";
   </div>
 </SiteLayout>
 <style>
-  .blog-index {
-  }
-  .blog-index .title {
-    padding: var(--size-500);
-  }
-  .blog-index .entries {
-    /* padding: var(--size-500); */
-  }
-
 </style>

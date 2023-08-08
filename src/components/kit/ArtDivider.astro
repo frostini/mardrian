@@ -1,50 +1,91 @@
 ---
+import { shuffle, columnWidthsToCssGrid } from "../../utils/index.js";
+// grid values
+let columnWidths = [2,3,7,8,4];
+// color values
+let colors = ["white", "white", "red", "blue", "yellow"];
+//shuffle columnWidths and convert from column widths to start/end column values for grid
+const gridValues = columnWidthsToCssGrid(
+  shuffle(columnWidths)
+)
+// destucture color values into CSS variables
+const [
+  firstColor,
+  secondColor,
+  thirdColor,
+  fourthColor,
+  fifthColor,
+] = shuffle(colors)
+// destucture gridValues into CSS variables
+const [
+  firstColumnValue,
+  secondColumnValue,
+  thirdColumnValue,
+  fourthColumnValue,
+  fifthColumnValue,
+  sixthColumnValue,
+  seventhColumnValue,
+  eighthColumnValue,
+  ninthColumnValue,
+  tenthColumnValue,
+] = gridValues.flat()
+const { height = "0.8rem"} = Astro.props;
 ---
-<div class="swag">
+<div class="art-divider">
   <div></div>
   <div></div>
   <div></div>
   <div></div>
   <div></div>
 </div>
-<style>
-  .swag div:nth-child(1){
-    background-color: var(--red-color);
-    grid-column: 1/5;
-  }
-  .swag div:nth-child(2){
-    background-color: var(--white-color);
-    grid-column: 5/8;
-  }
-  .swag div:nth-child(3){
-    background-color: var(--yellow-color);
-    grid-column: 8/9;
-  }
-  .swag div:nth-child(4){
-    background-color: var(--white-color);
-    grid-column: 9/16;
-  }
-  .swag div:nth-child(5){
-    background-color: var(--blue-color);
-    grid-column: 16/25;
-  }
-  /* .swag div:nth-child(6){
-    background-color: orange;
-    grid-column: 9/12;
-  }
-  .swag div:nth-child(7){
-    background-color: pink;
-    grid-column: 12/13;  
-  } */
-  .swag {
-    border: 0.33rem solid var(--dark-color);
+<style define:vars={{ 
+  height,
+  firstColor,
+  secondColor,
+  thirdColor,
+  fourthColor,
+  fifthColor,
+  firstColumnValue,
+  secondColumnValue,
+  thirdColumnValue,
+  fourthColumnValue,
+  fifthColumnValue,
+  sixthColumnValue,
+  seventhColumnValue,
+  eighthColumnValue,
+  ninthColumnValue,
+  tenthColumnValue,
+}}>
+  .art-divider {
+    border: 0.2rem solid var(--dark-color);
     border-style: solid none;
     display: grid;
-    gap: 0.33rem;
-    height: var(--size-900);
+    gap: 0.2rem;
+    height: var(--height);
+    /* height: 1rem; */
     background-color: var(--dark-color);
     grid-template-columns: repeat(24, minmax(10px, 1fr));
     grid-template-rows: minmax(0px, 1fr);
-    margin: 3rem 0rem;
+    margin: 0rem 0rem 3rem;
+  }
+  .art-divider div:nth-child(1){
+    background-color: var(--firstColor);
+    grid-column: var(--firstColumnValue)/var(--secondColumnValue);
+  }
+  .art-divider div:nth-child(2){
+    background-color: var(--secondColor);
+    grid-column: var(--thirdColumnValue)/var(--fourthColumnValue);
+  }
+  .art-divider div:nth-child(3){
+    background-color: var(--thirdColor);
+    grid-column: var(--fifthColumnValue)/var(--sixthColumnValue);
+  }
+  .art-divider div:nth-child(4){
+    background-color: var(--fourthColor);
+    grid-column: var(--seventhColumnValue)/var(--eighthColumnValue);
+  }
+  .art-divider div:nth-child(5){
+    background-color: var(--fifthColor);
+    grid-column: var(--ninthColumnValue)/var(--tenthColumnValue);
   }
 </style>
