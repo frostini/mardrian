@@ -91,7 +91,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     height: 100%;
   }
   .hero {
-    overflow: scroll;
+    /* overflow: scroll; */
     display: grid;
     grid-column-start: 1;
     grid-column-end: 4;
@@ -100,12 +100,14 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     background-color: white;
     padding: var(--size-300);
     place-items: center;
+    border: var(--border-width) solid var(--dark-color);
+    border-style: solid none;
   }
   .hero-text {
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 1fr 6fr 1fr;
-    gap: 0.33rem;
+    /* gap: 0.33rem; */
   }
   .summary {
     display: none !important;

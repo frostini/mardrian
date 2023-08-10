@@ -15,27 +15,42 @@ import SiteLayout from "../layouts/SiteLayout.astro";
           <h3 class=" light-text">thanks for visiting my site </h3>
           <!-- <span class="">😬</span>  -->
           <h6 class="light-text" style="margin-top:1rem;">I'm a senior full-stack designer + developer specializing in component-based design systems, customer development, and lean/agile methodologies.</h6>
-          <h5 style="margin-top:1rem;"><a href="">about</a> <span class="light-text">|</span> <a href="">blog</a> <span class="light-text">|</span> <a href="">contact / hire</a></h5>
+          <h5 style="margin-top:1rem;"><a href="#about-section">about</a> <span class="light-text">|</span> <a href="/posty">blog</a> <span class="light-text">|</span> <a href="/aboutro">contact / hire</a></h5>
         </div>
       </div>
     </div>
   </Mardrian>
-  <div>
-    <TitleText text="hellloooo iplurabus ipsum and stuff"/>
-    <TitleText text="hellloooo iplurabus ipsum and stuff"/>
-    <TitleText text="hellloooo iplurabus ipsum and stuff"/>
-    <TitleText text="hellloooo iplurabus ipsum and stuff"/>
-    <TitleText text="hellloooo iplurabus ipsum and stuff"/>
-    <TitleText text="hellloooo iplurabus ipsum and stuff"/>
+  <div id="about-section">
+    <h3 class="light-text">About <b>Me</b></h3>
+    <h6 class="light-text" style="margin-top:1rem;">
+      I&#8217;m Marlon Frausto (he/him) and I work as a full-stack engineer specializing in component-based design systems, production-grade APIs, customer development, and agile/lean methodologies. 
+    </h6>
+    <h6 class="light-text" style="margin-top:1rem;">
+      I trained as an engineer in San Francisco, CA, at the world&#8217;s first coding bootcamp in 2014, and have been coding professionally ever since. 
+    </h6>
+    <h6 class="light-text" style="margin-top:1rem;">
+      Most recently I helped co-found multitaskr as CTO and have since moved on to build an independent consulting practice.
+    </h6>
+    <h6 class="light-text" style="margin-top:1rem;">
+      You can find out about the latest tools, problems, or products I&#8217;m working on by checking out my blog.
+    </h6>
   </div>
 </SiteLayout>
 <style>
+  #about-section {
+    height: 100%;
+    background-color: var(--white-color);
+    margin-top: var(--border-width);
+    scroll-behavior: smooth;
+    padding: var(--size-500);
+    
+  }
   .her {
     max-width: 900px;
 
   }
   .hero {
-    overflow: scroll;
+    /* overflow: scroll; */
     display: grid;
     grid-column-start: 1;
     grid-column-end: 4;
@@ -44,12 +59,13 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     background-color: white;
     padding: var(--size-300);
     place-items: center;
+    border: var(--border-width) solid var(--dark-color);
+    border-style: solid none;
   }
   .hero-text {
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 1fr 6fr 1fr;
-    gap: 0.33rem;
   }
   @media screen and (min-width: 800px) and (min-height: 450px) and (orientation: landscape) {
     .hero-text {

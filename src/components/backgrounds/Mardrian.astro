@@ -39,12 +39,11 @@ const { containerHeight } = Astro.props;
     grid-template-rows: 1fr 6fr 1fr;
     grid-column: 1; 
     grid-row: 1;
-    gap: 0.33rem;
   }
   .grid-row {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 0.33rem;
+    gap: var(--border-width);
   }
   .top {
     grid-row: 1;
