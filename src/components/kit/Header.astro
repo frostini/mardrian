@@ -2,7 +2,7 @@
 ---
 <div class="header">
   <div class="header-logo">
-    <h4> marlon <b>frausto</b> </h4>
+    <h5> marlon <b>frausto</b> </h5>
   </div>
   <ul class="header-navigation">
     <li class="h6 light-text">
@@ -18,7 +18,8 @@
 </div>
 <style>
   .header {
-    padding: var(--border-width) 0;
+    padding: var(--border-width) 0 0;
+    /* padding: 0 0 var(--border-width); */
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 5fr 3fr;
@@ -74,11 +75,12 @@
     text-decoration: none;
   }
   /* screen level responsive design */
-  @media screen and (min-width: 800px) and (min-height: 450px) and (orientation: landscape) {
+  @media screen and (min-width: 600px) {
     .header {
       grid-template-columns: 2fr 5fr 2fr;
-      gap: 0.5rem;
-      padding: 0.5rem 0;
+      /* gap: 0.5rem; */
+      /* padding: 0.5rem 0; */
+    padding: 0 0 var(--border-width);
     }
     .header-logo {
       grid-row: 1/3;

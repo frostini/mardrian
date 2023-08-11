@@ -18,7 +18,7 @@
   --size-900: clamp(2.67rem, 2.07rem + 3vw, 4.21rem);
   --size-1000: clamp(3.34rem, 2.45rem + 4.43vw, 5.61rem);
   --thin-font: 400;
-  --border-width: 0.33rem;
+  --border-width: 0.5rem;
 }
 * {
   margin: 0;

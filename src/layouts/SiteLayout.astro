@@ -1,7 +1,9 @@
 ---
 import "../styles/theme.css";
 import Header from "../components/kit/Header.astro";
+import Footer from "../components/kit/Footer.astro";
 const { pageTitle, pageColor } = Astro.props;
+const mediaQuery = "screen and (min-width: 500px)";
 ---
 <html lang="en">
   <head>
@@ -18,11 +20,12 @@ const { pageTitle, pageColor } = Astro.props;
       </header>
       <main>
         <slot />
+        <Footer/>
       </main>
     </div>
   </body>
 </html>
-<style define:vars={{ pageColor }}>
+<style define:vars={{ pageColor, mediaQuery }}>
   div.scene-container {
 /* restating width in vw as fallback for dvw. can remove vw in 2024*/
     width: 100vw;
@@ -33,6 +36,7 @@ const { pageTitle, pageColor } = Astro.props;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 7fr 1fr;
+    border: solid var(--border-width) var(--dark-color);
   }
   header {
     grid-row: 3;
@@ -43,7 +47,8 @@ const { pageTitle, pageColor } = Astro.props;
     background-color: var(--pageColor);
     scroll-behavior: smooth;
   }
-  @media screen and (min-width: 800px) and (min-height: 450px) and (orientation: landscape) {
+  /* and (min-height: 450px) and (orientation: landscape)  */
+  @media screen and (min-width: 600px) {
     header {
       grid-row: 1/2;
     }
