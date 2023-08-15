@@ -1,12 +1,17 @@
 ---
 import TagCloud from "./kit/TagCloud.astro";
+const { post } = Astro.props
+const titleHolder = "react vs framework, then vs now"
 ---
 <div class="card">
-  <h4 class="light-text"><a href="">react vs framework, then vs now</a></h4>
-  <TagCloud/>
+  <h4 class="light-text">
+    <!-- <a href=""></a> -->
+    {post ? post.frontmatter.title : titleHolder  }
+  </h4>
+  <TagCloud tags={post.frontmatter.tags}/>
   <div class="meta">
-    <h6>design</h6>
-    <i>last updated on<br>August 23rd, 2023</i>
+    <h6>{post.frontmatter.category || "design"}</h6>
+    <i>last updated on <br> {post.frontmatter.pubDate.slice(0,10)}</i>
   </div>
 </div>
 <style>
