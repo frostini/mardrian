@@ -1,0 +1,95 @@
+---
+import SiteLayout from "./SiteLayout.astro";
+import "../styles/animations/colorChange.css";
+import "../styles/animations/waving.css";
+import "../styles/theme.css";
+import Mardrian from "../components/backgrounds/Mardrian.astro";
+import TagCloud from "../components/kit/TagCloud.astro";
+const { frontmatter, pageTitle } = Astro.props;
+---
+<SiteLayout pageTitle={frontmatter.title}>
+  <Mardrian containerHeight="100%">
+    <div class="hero-text">
+      <div class="hero">
+        <div class="her">
+          <div>
+            <h4 style="color:var(--blue-color);"><span style="color:var(--dark-color)">blog</span> / {frontmatter.category}</span></h4>
+            <h2 class=" light-text">{frontmatter.title}</h2>
+          </div>
+          <div>
+            <h5>Summary</h5>
+            <h6 class="light-text">{frontmatter.description}</h6>
+          </div>
+          <div class="summary">
+            <h5>Tags</h5>
+            <TagCloud />
+          </div>
+          <div>
+            <i>last updated on August 4th, 2023</i>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </Mardrian>
+  <div>
+    <slot />
+  </div>
+</SiteLayout>
+<style>
+
+  .her div:nth-child(2) h6 {
+    margin-top: var(--size-300);
+  }
+  .her div:nth-child(2),
+  .her div:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+  }
+  /* .her div:nth-child(2) {
+    display: grid;
+    /* justify-content: start; */
+    /* place-items: center; */
+  /* } */ 
+  .her div:nth-child(4) {
+    align-self: end;
+    /* place-items: center; */
+  }
+  /* .her div:nth-child(3) {
+    background-color: yellow;
+  } */
+  .her {
+    max-width: 900px;
+    display: grid;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .hero {
+    /* overflow: scroll; */
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: white;
+    padding: var(--size-300);
+    place-items: center;
+    border: var(--border-width) solid var(--dark-color);
+    border-style: solid none;
+  }
+  .hero-text {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 6fr 1fr;
+    /* gap: 0.33rem; */
+  }
+  .summary {
+    display: none !important;
+  }
+  @media screen and (min-width: 500px) and (min-height: 450px) {
+    .summary {
+      display: block !important;
+    }
+}
+
+</style>

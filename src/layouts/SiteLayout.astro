@@ -3,7 +3,6 @@ import "../styles/theme.css";
 import Header from "../components/kit/Header.astro";
 import Footer from "../components/kit/Footer.astro";
 const { pageTitle, pageColor } = Astro.props;
-const mediaQuery = "screen and (min-width: 500px)";
 ---
 <html lang="en">
   <head>
@@ -25,7 +24,7 @@ const mediaQuery = "screen and (min-width: 500px)";
     </div>
   </body>
 </html>
-<style define:vars={{ pageColor, mediaQuery }}>
+<style define:vars={{ pageColor }}>
   div.scene-container {
 /* restating width in vw as fallback for dvw. can remove vw in 2024*/
     width: 100vw;
