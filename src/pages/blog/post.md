@@ -2,13 +2,14 @@
 layout: ../../layouts/PostLayout.astro
 title: 'My First Blog Post'
 pubDate: 2022-07-01
+lastUpdate: "August 4th, 2023"
 category: 'design'
 description: 'This is the first post of my new Astro blog.'
 author: 'Astro Learner'
 image:
     url: 'https://docs.astro.build/assets/full-logo-light.png' 
     alt: 'The full Astro logo.'
-tags: ["astro", "blogging", "learning in public"]
+tags: ["astro", "blogging", "learning"]
 ---
 
 ## What I've accomplished

@@ -1,12 +1,18 @@
 ---
-
+const { tags } = Astro.props
 ---
 <ul class="tag-cloud light-text p">
-  <li><a href="">react</a></li>
-  <li><a href="">topic here</a></li>
-  <li><a href="">topic here</a></li>
-  <li><a href="">topic here</a></li>
-  <li><a href="">topic here</a></li>
+  { tags ?
+    tags.map((tag) => (
+    <li>
+      {tag}
+    </li>
+  )) :
+    <li><a href="">example</a></li>
+    <li><a href="">example</a></li>
+    <li><a href="">example</a></li>
+    <li><a href="">example</a></li>
+  }
 </ul>
 <style>
 .tag-cloud li {
