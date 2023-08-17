@@ -5,12 +5,14 @@ import "../styles/theme.css";
 import ArtDivider from "../components/kit/ArtDivider.astro";
 import Card from "../components/Card.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
-const allPosts = await Astro.glob("../pages/posts/*.md")
+const allPosts = await Astro.glob("../pages/posts/*.md");
 ---
 <SiteLayout pageTitle="hellaz" pageColor="white">
   <div class="blog-index">
     <div class="blog-index--title">
-      <h2><span class="light-text">the </span>blog</h2>
+      <h2>
+        <span class="light-text">the </span>blog
+      </h2>
     </div>
     <div class="blog-index--entries">
       {
@@ -20,8 +22,5 @@ const allPosts = await Astro.glob("../pages/posts/*.md")
         ))
       }
     </div>
-
   </div>
 </SiteLayout>
-<style>
-</style>

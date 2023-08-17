@@ -1,11 +1,10 @@
 ---
 import TagCloud from "./kit/TagCloud.astro";
-const { post } = Astro.props
-const titleHolder = "react vs framework, then vs now"
+const { post } = Astro.props;
+const titleHolder = "react vs framework, then vs now";
 ---
 <div class="card">
   <h4 class="light-text">
-    <!-- <a href=""></a> -->
     {post ? post.frontmatter.title : titleHolder  }
   </h4>
   <TagCloud tags={post.frontmatter.tags}/>
