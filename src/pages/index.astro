@@ -8,19 +8,19 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 <SiteLayout pageTitle="hellaz">
   <Mardrian containerHeight="100%">
-    <div class="hero-text">
+    <div id="home" class="hero-text">
       <div class="hero">
         <div class="her">
           <h1>Hello <span class="waving">👋</span></h1>
           <h3 class=" light-text">thanks for visiting my site </h3>
           <!-- <span class="">😬</span>  -->
-          <h6 class="light-text" style="margin-top:1rem;">I'm a senior full-stack designer + developer specializing in component-based design systems, customer development, and lean/agile methodologies.</h6>
-          <h5 style="margin-top:1rem;"><a href="#about-section">about</a> <span class="light-text">|</span> <a href="/posty">blog</a> <span class="light-text">|</span> <a href="/aboutro">contact / hire</a></h5>
+          <h6 class="light-text" style="margin-top:1rem;">I'm a full-stack designer + developer specializing in component-based design systems, customer development, and lean/agile methodologies.</h6>
+          <h5 style="margin-top:1rem;"><a href="#about">about</a> <span class="light-text">|</span> <a href="/posty">blog</a> <span class="light-text">|</span> <a href="/aboutro">contact / hire</a></h5>
         </div>
       </div>
     </div>
   </Mardrian>
-  <div id="about-section">
+  <div id="about">
     <h3 class="light-text">About <b>Me</b></h3>
     <h6 class="light-text" style="margin-top:1rem;">
       I&#8217;m Marlon Frausto (he/him) and I work as a full-stack engineer specializing in component-based design systems, production-grade APIs, customer development, and agile/lean methodologies. 
@@ -37,7 +37,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
   </div>
 </SiteLayout>
 <style>
-  #about-section {
+  #about {
     height: 100%;
     background-color: var(--white-color);
     margin-top: var(--border-width);

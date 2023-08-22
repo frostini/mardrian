@@ -6,7 +6,10 @@
   </div>
   <ul class="header-navigation">
     <li class="h6 light-text">
-      <a href="/">home</a>
+      <a href="/#home">home</a>
+    </li>
+    <li class="h6 light-text">
+      <a href="/#about">about</a>
     </li>
     <li class="h6 light-text">
       <a href="/blogg">blog</a>
@@ -47,7 +50,7 @@
     display: grid;
     grid-column: 1/3;
     grid-row: 2;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--border-width);
     place-items: center;
   }
