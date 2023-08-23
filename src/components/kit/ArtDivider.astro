@@ -29,7 +29,14 @@ const [
   ninthColumnValue,
   tenthColumnValue,
 ] = gridValues.flat()
-const { height = "0.8rem"} = Astro.props;
+const { 
+  height = "0.8rem",
+  borderTop = "solid",
+  borderBottom = "solid",
+  marginBottom = "none",
+  width = "100%",
+  lineWidth = "0.2rem",
+} = Astro.props;
 ---
 <div class="art-divider">
   <div></div>
@@ -39,7 +46,12 @@ const { height = "0.8rem"} = Astro.props;
   <div></div>
 </div>
 <style define:vars={{ 
-  height,
+  height, // start of prop variables
+  width,
+  lineWidth,
+  borderTop,
+  borderBottom,
+  marginBottom, // end of prop variables
   firstColor,
   secondColor,
   thirdColor,
@@ -57,16 +69,20 @@ const { height = "0.8rem"} = Astro.props;
   tenthColumnValue,
 }}>
   .art-divider {
-    border: 0.2rem solid var(--dark-color);
-    border-style: solid none;
+    border: var(--lineWidth) solid var(--dark-color);
+    /* outline: 0.3rem solid var(--dark-color); */
+    border-style: var(--borderTop) none var(--borderBottom);
     display: grid;
-    gap: 0.2rem;
+    gap: var(--lineWidth);
     height: var(--height);
-    /* height: 1rem; */
+    width: var(--width);
+    margin-bottom: var(--marginBottom);
     background-color: var(--dark-color);
-    grid-template-columns: repeat(24, minmax(10px, 1fr));
+    grid-template-columns: repeat(24, minmax(0px, 1fr));
     grid-template-rows: minmax(0px, 1fr);
-    margin: 0rem 0rem 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
   }
   .art-divider div:nth-child(1){
     background-color: var(--firstColor);
@@ -88,4 +104,11 @@ const { height = "0.8rem"} = Astro.props;
     background-color: var(--fifthColor);
     grid-column: var(--ninthColumnValue)/var(--tenthColumnValue);
   }
+
+  @media screen and (min-width: 1000px) {
+    .art-divider { 
+      border-style: solid;
+    }
+
+}
 </style>

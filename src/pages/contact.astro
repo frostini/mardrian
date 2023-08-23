@@ -13,13 +13,15 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     <div class="hero-text">
       <div class="hero">
         <div class="her">
-          <div>
-            <h3 style="margin-top:1rem;">contact <span style="color:var(--blue-color);">/</span> hire</h3>
-            <h6 class="light-text" style="margin-top:1rem;">Feel free to get in touch by writing me at <b>marlonjfrausto@gmail.com</b></h6>
-            <h6 class="light-text" style="margin-top:1rem;">If you are interested in hiring me, please include a bit about the project/product you have in mind, start/end times, budget, and anything else you might deem relevant to start the conversation.</h6>
-            <h6 class="light-text" style="margin-top:1rem;">I will usually respond to new inquiries within 2 working days.</h6>
-            <h6 class="light-text" style="margin-top:1rem;">Thank you and looking foward to hearing from you!</h6>
-          </div>
+          <h2>
+            <span class="light-text">contact</span>
+            <span style="color:var(--blue-color);">/</span>
+            hire
+          </h2>
+          <h6 class="light-text" style="margin-top:1rem;">Feel free to get in touch by writing me at <b>marlonjfrausto@gmail.com</b></h6>
+          <h6 class="light-text" style="margin-top:1rem;">If you are interested in hiring me, please include a bit about the project/product you have in mind, start/end times, budget, and anything else you might deem relevant to start the conversation.</h6>
+          <h6 class="light-text" style="margin-top:1rem;">I will usually respond to new inquiries within 2 working days.</h6>
+          <h6 class="light-text" style="margin-top:1rem;">Thank you and looking foward to hearing from you!</h6>
         </div>
       </div>
     </div>
@@ -27,10 +29,10 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 </SiteLayout>
 <style>
   .her {
-    max-width: 900px;
+    max-width: 90%;
     display: grid;
-    justify-content: space-between;
-    height: 100%;
+    justify-content: center;
+    /* height: 100%; */
   }
   .hero {
     display: grid;
@@ -39,7 +41,7 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     grid-row-start: 2;
     grid-row-end: 3;
     background-color: white;
-    padding: var(--size-300);
+    /* padding: var(--size-300); */
     place-items: center;
     border: var(--border-width) solid var(--dark-color);
     border-style: solid none;
@@ -48,5 +50,10 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 1fr 6fr 1fr;
+  }
+  @media screen and (min-width: 1000px) {
+    .her {
+      width: 50rem;
+    }
   }
 </style>

@@ -1,0 +1,69 @@
+---
+import "../styles/animations/colorChange.css";
+import "../styles/animations/waving.css";
+import "../styles/theme.css";
+import ArtDivider from "../components/kit/ArtDivider.astro";
+import Card from "../components/Card.astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+const allPosts = await Astro.glob("../pages/blog/*.md");
+---
+<SiteLayout pageTitle="hellaz" pageColor="white">
+  <div class="blog-index">
+    <!-- <ArtDivider height="1rem" borderTop="none"/> -->
+    <h2 class="blog-index--title">
+      <span class="light-text">the </span>blog
+    </h2>
+    
+    <div class="blog-index--entries">
+      { allPosts.map((post, index, {length}) => {
+        if (index + 1 === length) {
+          return (
+        <div class="blog-index--entry">
+          <Card post={post}/>
+        </div>
+        <ArtDivider height="1rem" width="100%" 
+        lineWidth="0.3rem" borderBottom="none"
+        />
+      )
+        }
+        return (
+        <div class="blog-index--entry">
+          <Card post={post}/>
+        </div>
+        <ArtDivider height="1rem" width="100%" 
+        lineWidth="0.3rem"
+        />
+      )
+      }
+      )}
+    </div>
+  </div>
+</SiteLayout>
+<style>
+  .blog-index--entry {
+    max-width: 90%;
+    display: grid;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;    
+  }
+  .blog-index--entries {
+    display: grid;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .blog-index--title{
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: var(--border-width) solid;
+  }
+
+  @media screen and (min-width: 1000px) {
+    .blog-index--entries {
+      width: 50rem;
+    }
+}
+
+</style>

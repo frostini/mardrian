@@ -15,49 +15,57 @@ import SiteLayout from "../layouts/SiteLayout.astro";
           <h3 class=" light-text">thanks for visiting my site </h3>
           <!-- <span class="">😬</span>  -->
           <h6 class="light-text" style="margin-top:1rem;">I'm a full-stack designer + developer specializing in component-based design systems, customer development, and lean/agile methodologies.</h6>
-          <h5 style="margin-top:1rem;"><a href="#about">about</a> <span class="light-text">|</span> <a href="/posty">blog</a> <span class="light-text">|</span> <a href="/aboutro">contact / hire</a></h5>
+          <h5 style="margin-top:1rem;"><a href="/#about">about</a> <span class="light-text">|</span> <a href="/blog">blog</a> <span class="light-text">|</span> <a href="/contact">contact / hire</a></h5>
         </div>
       </div>
     </div>
   </Mardrian>
-  <div id="about">
-    <h3 class="light-text">About <b>Me</b></h3>
-    <h6 class="light-text" style="margin-top:1rem;">
-      I&#8217;m Marlon Frausto (he/him) and I work as a full-stack engineer specializing in component-based design systems, production-grade APIs, customer development, and agile/lean methodologies. 
-    </h6>
-    <h6 class="light-text" style="margin-top:1rem;">
-      I trained as an engineer in San Francisco, CA, at the world&#8217;s first coding bootcamp in 2014, and have been coding professionally ever since. 
-    </h6>
-    <h6 class="light-text" style="margin-top:1rem;">
-      Most recently I helped co-found multitaskr as CTO and have since moved on to build an independent consulting practice.
-    </h6>
-    <h6 class="light-text" style="margin-top:1rem;">
-      You can find out about the latest tools, problems, or products I&#8217;m working on by checking out my blog.
-    </h6>
+  <div  id="about">
+      <div class="about-section">
+        <h2 class="light-text">About <b>Me</b></h2>
+        <h6 class="light-text" style="margin-top:1rem;">
+          I&#8217;m Marlon Frausto (he/him) and I work as a full-stack engineer specializing in component-based design systems, production-grade APIs, customer development, and agile/lean methodologies. 
+        </h6>
+        <h6 class="light-text" style="margin-top:1rem;">
+          I trained as an engineer in San Francisco, CA, at the world&#8217;s first coding bootcamp in 2014, and have been coding professionally ever since. 
+        </h6>
+        <h6 class="light-text" style="margin-top:1rem;">
+          Most recently I helped co-found multitaskr as CTO and have since moved on to build an independent consulting practice.
+        </h6>
+        <h6 class="light-text" style="margin-top:1rem;">
+          You can find out about the latest tools, problems, or products I&#8217;m working on by checking out my blog.
+        </h6>
+      </div>
   </div>
 </SiteLayout>
 <style>
+  .about-section {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   #about {
     height: 100%;
     background-color: var(--white-color);
     margin-top: var(--border-width);
     scroll-behavior: smooth;
-    padding: var(--size-500);
+    /* padding: var(--size-500); */
+    display: grid;
+    align-items: center;
     
   }
   .her {
-    max-width: 900px;
-
+    max-width: 90%;
+    display: grid;
+    justify-content: center;
   }
   .hero {
-    /* overflow: scroll; */
     display: grid;
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 2;
     grid-row-end: 3;
     background-color: white;
-    padding: var(--size-300);
     place-items: center;
     border: var(--border-width) solid var(--dark-color);
     border-style: solid none;
@@ -67,10 +75,13 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 1fr 6fr 1fr;
   }
-  /* @media screen and (min-width: 600px) {
-    .hero-text {
-      gap: 0.5rem;
+  @media screen and (min-width: 1000px) {
+    .her {
+      width: 50rem;
     }
-} */
+    .about-section {
+      width: 50rem;
+    }
+}
 
 </style>

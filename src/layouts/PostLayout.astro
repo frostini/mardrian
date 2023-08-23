@@ -55,9 +55,10 @@ const { frontmatter, pageTitle } = Astro.props;
     align-self: end;
   }
   .her {
-    max-width: 900px;
+    width: 50rem;
+    max-width: 90%;
     display: grid;
-    justify-content: space-between;
+    justify-content: center;
     height: 100%;
   }
   .hero {
@@ -83,6 +84,11 @@ const { frontmatter, pageTitle } = Astro.props;
   @media screen and (min-width: 500px) and (min-height: 450px) {
     .summary {
       display: block !important;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .her {
+      width: 50rem;
     }
 }
 
