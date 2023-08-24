@@ -22,7 +22,7 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
           <Card post={post}/>
         </div>
         <ArtDivider height="1rem" width="100%" 
-        lineWidth="0.3rem" borderBottom="none"
+         borderBottom="none"
         />
       )
         }
@@ -31,7 +31,7 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
           <Card post={post}/>
         </div>
         <ArtDivider height="1rem" width="100%" 
-        lineWidth="0.3rem"
+        
         />
       )
       }
@@ -41,9 +41,9 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
 </SiteLayout>
 <style>
   .blog-index--entry {
-    max-width: 90%;
+    width: 90%;
     display: grid;
-    justify-content: center;
+    /* justify-content: center; */
     margin-left: auto;
     margin-right: auto;
     margin-top: 2rem;    
@@ -62,7 +62,7 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
 
   @media screen and (min-width: 1000px) {
     .blog-index--entries {
-      width: 50rem;
+      max-width: 50rem;
     }
 }
 
