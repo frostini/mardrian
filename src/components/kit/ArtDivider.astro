@@ -1,9 +1,11 @@
 ---
 import { shuffle, columnWidthsToCssGrid } from "../../utils/index.js";
+import { colors } from "../../styles/theme.js";
+// color values
+const { redColor, blueColor, yellowColor } = colors;
+let dividerColors = ["white", "white", redColor, blueColor, yellowColor];
 // grid values
 let columnWidths = [2,3,7,8,4];
-// color values
-let colors = ["white", "white", "red", "blue", "yellow"];
 //shuffle columnWidths and convert from column widths to start/end column values for grid
 const gridValues = columnWidthsToCssGrid(
   shuffle(columnWidths)
@@ -15,7 +17,7 @@ const [
   thirdColor,
   fourthColor,
   fifthColor,
-] = shuffle(colors)
+] = shuffle(dividerColors)
 // destucture gridValues into CSS variables
 const [
   firstColumnValue,

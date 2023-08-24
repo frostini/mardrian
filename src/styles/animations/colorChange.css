@@ -2,32 +2,25 @@
 
 @keyframes colorChangeBackground {
   0% {
-    background-color: var(--grey-color)
-  }
-  15% {
-    background-color: var(--grey-color)
-  }
-  25% {
-    background-color: var(--red-color);
-  }
-  40% {
-    background-color: var(--red-color);
-  }
-  50% {
     background-color: var(--blue-color);
   }
-  65% {
+  23% {
     background-color: var(--blue-color);
   }
-  75% {
+  33% {
+    background-color: var(--red-color);
+  }
+  56% {
+    background-color: var(--red-color);
+  }
+  66% {
     background-color: var(--yellow-color);
   }
-  90% {
+  89% {
     background-color: var(--yellow-color);
   }
-  
   100% {
-    background-color: var(--grey-color)
+    background-color: var(--blue-color);
   }
 }
 @keyframes colorChange {

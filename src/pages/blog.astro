@@ -2,10 +2,12 @@
 import "../styles/animations/colorChange.css";
 import "../styles/animations/waving.css";
 import "../styles/theme.css";
+import { colors } from "../styles/theme";
 import ArtDivider from "../components/kit/ArtDivider.astro";
 import Card from "../components/Card.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
 const allPosts = await Astro.glob("../pages/blog/*.md");
+console.log(colors.redColor)
 ---
 <SiteLayout pageTitle="hellaz" pageColor="white">
   <div class="blog-index">
@@ -21,8 +23,8 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
         <div class="blog-index--entry">
           <Card post={post}/>
         </div>
-        <ArtDivider height="1rem" width="100%" 
-         borderBottom="none"
+        <ArtDivider height="0.7rem" width="100%" 
+          borderBottom="none"
         />
       )
         }

@@ -1,9 +1,9 @@
 @import '@fontsource-variable/montserrat';
 :root {
   --red-color: #C32F29;
-  --blue-color: #271AC2;
+  /* --blue-color: #271AC2; */
   --white-color: #fff;
-  /* --blue-color: #3122D9; */
+  --blue-color: #3122D9;
   --yellow-color: #F9CC37;
   --grey-color:   #727171;
   --light-grey-color: #D9D9D9;

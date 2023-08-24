@@ -1,7 +1,22 @@
 ---
 import "../../styles/theme.css";
+import { colors } from "../../styles/theme";
+import { shuffle } from "../../utils/index.js";
 import "../../styles/animations/colorChange.css";
 const { containerHeight } = Astro.props;
+// TODO
+// ADD COLOR THEME VARIABLES TO TEMPLATE
+// ADD COLOR TO LEFT AND RIGHT
+// MAKE COLUMNS DYNAMIC
+
+
+// grid for top variables
+const gridValues = shuffle(["1fr", "2fr", "3fr", "4fr", "5fr", "6fr"]).slice(2);
+const [ leftTop, centerTop, rightTop ] = gridValues;
+  // left color
+// grid for bottom variables
+const [ leftBottom, centerBottom, rightBottom ] = gridValues.reverse();
+  // right color
 ---
 <div class="container">
   <div class="grid">
@@ -26,7 +41,7 @@ const { containerHeight } = Astro.props;
   </div>
 </div>
 
-<style define:vars={{ containerHeight }}>
+<style define:vars={{ containerHeight, leftTop, centerTop, rightTop, leftBottom, centerBottom, rightBottom }}>
   .container {
     display: grid;
     height: var( --containerHeight);
@@ -47,23 +62,27 @@ const { containerHeight } = Astro.props;
   }
   .top {
     grid-row: 1;
-    animation: gridRowResize 9s ease -3000ms infinite both;
+    grid-template-columns: var(--leftTop) var(--centerTop) var(--rightTop);
+    /* animation: gridRowResize 8s ease -4000ms infinite both; */
   }
   .middle {
     grid-row: 2;
   }
   .bottom {
     grid-row: 3;
-    animation: gridRowResize 9s ease infinite both;
+    grid-template-columns: var(--leftBottom) var(--centerBottom) var(--rightBottom);
+    /* animation: gridRowResize 8s ease infinite both; */
   }
   .item {
     background-color: var(--white-color, white);
   }
   .top .item:nth-child(3) {
-    animation: colorChangeBackground 9s ease -3s infinite both;
+    background-color: var(--red-color);
+    /* animation: colorChangeBackground 8s ease -2s infinite both; */
   }
   .bottom .item:nth-child(1) {
-    animation: colorChangeBackground 9s ease 0s infinite both;
+    background-color: var(--yellow-color);
+    /* animation: colorChangeBackground 8s ease 0s infinite both; */
   }
   /* content container styling */
   .content {
@@ -79,20 +98,26 @@ const { containerHeight } = Astro.props;
     0% {
       grid-template-columns: 1fr 1fr 1fr;
     }
-    23% {
+    15% {
       grid-template-columns: 1fr 1fr 1fr;
     }
-    33% {
+    25% {
       grid-template-columns: 1fr 2fr 4fr;
     }
-    56% {
+    40% {
       grid-template-columns: 1fr 2fr 4fr;
     }
-    66% {
+    50% {
       grid-template-columns: 1fr 4fr 1fr;
     }
-    89% {
+    65% {
       grid-template-columns: 1fr 4fr 1fr;
+    }
+    75% {
+      grid-template-columns: 4fr 2fr 1fr;
+    }
+    90% {
+      grid-template-columns: 4fr 2fr 1fr;
     }
     100% {
       grid-template-columns: 1fr 1fr 1fr;
@@ -107,16 +132,18 @@ const { containerHeight } = Astro.props;
       gap: var(--border-width);
     }
     .top .item:nth-child(1) {
-      animation: colorChangeBackground 9s ease -3s infinite both;
+      background-color: var(--red-color);
+      /* animation: colorChangeBackground 8s ease -2s infinite both; */
     }
     .top .item:nth-child(3) {
-      animation: none;
+      background-color: white;
     }
     .bottom .item:nth-child(3) {
-      animation: colorChangeBackground 9s ease 0s infinite both;
+      background-color: var(--yellow-color);
+      /* background-color: colorChangeBackground 8s ease 0s infinite both; */
     }
     .bottom .item:nth-child(1) {
-      animation: none;
+      background-color: white;
     }
   }
 </style>

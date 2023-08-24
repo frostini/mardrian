@@ -3,16 +3,16 @@ import SiteLayout from "./SiteLayout.astro";
 import "../styles/animations/colorChange.css";
 import "../styles/animations/waving.css";
 import "../styles/theme.css";
-import Mardrian from "../components/backgrounds/Mardrian.astro";
+import MardrianStatic from "../components/backgrounds/MardrianStatic.astro";
 import TagCloud from "../components/kit/TagCloud.astro";
 const { frontmatter, pageTitle } = Astro.props;
 ---
 <SiteLayout pageTitle={frontmatter.title}>
-  <Mardrian containerHeight="100%">
+  <MardrianStatic containerHeight="100%">
     <div class="hero-text">
       <div class="hero">
         <div class="her">
-          <div>
+          <div style="">
             <h4 style="color:var(--blue-color);">
               <span style="color:var(--dark-color)">blog</span> / {frontmatter.category}
             </h4>
@@ -20,13 +20,13 @@ const { frontmatter, pageTitle } = Astro.props;
               {frontmatter.title}
             </h2>
           </div>
-          <div>
+          <div class="summary">
             <h5>Summary</h5>
             <h6 class="light-text">
               {frontmatter.description}
             </h6>
           </div>
-          <div class="summary">
+          <div class="tags">
             <h5>Tags</h5>
             <TagCloud tags={frontmatter.tags}/>
           </div>
@@ -36,7 +36,7 @@ const { frontmatter, pageTitle } = Astro.props;
         </div>
       </div>
     </div>
-  </Mardrian>
+  </MardrianStatic>
   <div>
     <slot />
   </div>
@@ -56,10 +56,11 @@ const { frontmatter, pageTitle } = Astro.props;
   }
   .her {
     width: 50rem;
-    max-width: 90%;
+    max-width: 90dvw;
     display: grid;
     justify-content: center;
     height: 100%;
+    /* grid-template-rows: minmax(0, 1fr); */
   }
   .hero {
     display: grid;
@@ -78,11 +79,13 @@ const { frontmatter, pageTitle } = Astro.props;
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 1fr 6fr 1fr;
   }
-  .summary {
+  .summary,
+  .tags {
     display: none !important;
   }
   @media screen and (min-width: 500px) and (min-height: 450px) {
-    .summary {
+    .summary,
+    .tags {
       display: block !important;
     }
 }
