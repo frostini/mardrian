@@ -1,0 +1,51 @@
+.post-template {
+  background-color:white;
+  margin-top:var(--border-width);
+  padding: var(--size-300);
+}
+.post-template--container {
+  width: 90%;
+  max-width: 50rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.post-template h1 {
+  padding: calc(var(--size-1000) * 0.7) 0;
+  font-size: calc(var(--size-1000) * 0.8);
+}
+.post-template h2 {
+  padding: calc(var(--size-900) * 0.8) 0;
+  font-size: calc(var(--size-900) * 0.8);
+}
+.post-template h3 {
+  padding: calc(var(--size-800) * 0.8) 0;
+  font-size: calc(var(--size-800) * 0.8);
+}
+.post-template h4 {
+  padding: calc(var(--size-700) * 0.8) 0;
+  font-size: calc(var(--size-700) * 0.8);
+}
+.post-template h5 {
+  padding: calc(var(--size-600) * 0.8) 0;
+  font-size: calc(var(--size-600) * 0.8);
+}
+.post-template h6 {
+  padding: calc(var(--size-500) * 0.5) 0;
+  font-size: calc(var(--size-500) * 0.8);
+}
+.post-template pre.astro-code.github-dark > code,
+pre {
+  padding: 1rem !important;
+  margin: 1rem 0 !important;
+}
+.post-template ol,
+.post-template ul {
+  margin-left: 1rem;
+  padding: calc(var(--size-500) * 0.5) 0;
+}
+.post-template li {
+  padding: calc(var(--size-500) * 0.1) 0;
+}
+p {
+  padding: calc(var(--size-500) * 0.2) 0;
+}

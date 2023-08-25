@@ -4,6 +4,7 @@ import "../styles/animations/colorChange.css";
 import "../styles/animations/waving.css";
 // import "../styles/code.css";
 import "../styles/theme.css";
+import "../styles/blogTheme.css";
 import MardrianStatic from "../components/backgrounds/MardrianStatic.astro";
 import TagCloud from "../components/kit/TagCloud.astro";
 const { frontmatter, pageTitle } = Astro.props;
@@ -38,8 +39,10 @@ const { frontmatter, pageTitle } = Astro.props;
       </div>
     </div>
   </MardrianStatic>
-  <div class="post-template" style="background-color:white;margin-top:var(--border-width); padding: 3rem">
-    <slot />
+  <div class="post-template">
+    <div class="post-template--container">
+      <slot />
+    </div>
   </div>
 </SiteLayout>
 
@@ -80,7 +83,7 @@ const { frontmatter, pageTitle } = Astro.props;
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 1fr 6fr 1fr;
   }
-  .summary,
+  /* .summary, */
   .tags {
     display: none !important;
   }
