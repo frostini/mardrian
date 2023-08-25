@@ -4,5 +4,9 @@ import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [preact()]
+  integrations: [preact()],
+  markdown: {
+    // Can be 'shiki' (default), 'prism' or false to disable highlighting
+    syntaxHighlight: 'prism',
+  },
 });

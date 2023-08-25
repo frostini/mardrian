@@ -23,3 +23,8 @@ tags: ["astro", "blogging", "learning", "learning"]
 ## What's next
 
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
+
+``` javascript
+const testing = "hello world"
+const test = [1,2,3,3,4]
+```

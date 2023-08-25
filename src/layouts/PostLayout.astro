@@ -2,6 +2,7 @@
 import SiteLayout from "./SiteLayout.astro";
 import "../styles/animations/colorChange.css";
 import "../styles/animations/waving.css";
+// import "../styles/code.css";
 import "../styles/theme.css";
 import MardrianStatic from "../components/backgrounds/MardrianStatic.astro";
 import TagCloud from "../components/kit/TagCloud.astro";
@@ -37,7 +38,7 @@ const { frontmatter, pageTitle } = Astro.props;
       </div>
     </div>
   </MardrianStatic>
-  <div>
+  <div class="post-template" style="background-color:white;margin-top:var(--border-width); padding: 3rem">
     <slot />
   </div>
 </SiteLayout>

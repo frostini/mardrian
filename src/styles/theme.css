@@ -24,7 +24,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: montserrat, sans-serif !important;
 }
 html,
 body {
@@ -33,6 +32,24 @@ body {
   background-color: var(--dark-color);
   font-size: var(--base-type-size);
 }
+.post-template h2 {
+  color: red;
+  /* background-color: white; */
+}
+.post-template pre.astro-code.github-dark > code {
+  padding: 1rem !important;
+}
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+p, a, i, b, li {
+font-family: montserrat, sans-serif !important;
+}
+
+
 h1,
 .h1 {
   font-size: var(--size-1000);
