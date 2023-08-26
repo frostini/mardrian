@@ -47,5 +47,12 @@ pre {
   padding: calc(var(--size-500) * 0.1) 0;
 }
 p {
-  padding: calc(var(--size-500) * 0.2) 0;
+  padding: calc(var(--size-500) * 0.5) 0;
+}
+
+blockquote {
+  padding: 1rem;
+  margin: 1rem 0 1rem 2rem;
+  border-left: 0.5rem solid var(--grey-color);
+  background-color: var(--light-grey-color);
 }
