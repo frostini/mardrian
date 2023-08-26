@@ -43,10 +43,12 @@ const { pageTitle, pageColor } = Astro.props;
   }
   main {
     height: 100%;
+    flex-grow: 1;
+    min-height: 0;
     overflow: auto;
     grid-row: 1/3;
     background-color: var(--pageColor);
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth; */
   }
   /* and (min-height: 450px) and (orientation: landscape)  */
   @media screen and (min-width: 600px) {

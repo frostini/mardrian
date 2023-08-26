@@ -32,7 +32,9 @@ html,
 body {
   height: 100%;
   min-height: 100dvh;
+  /* min-height: 0; */
   background-color: var(--dark-color);
+  /* overflow: auto; */
   font-size: var(--base-type-size);
 }
 
@@ -72,6 +74,7 @@ p,
 .p {
   font-size: var(--size-400);
   line-height: 1.5;
+  padding: 0;
 }
 .light-text {
   font-weight: var(--thin-font);
