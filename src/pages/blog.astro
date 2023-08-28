@@ -2,74 +2,65 @@
 import "../styles/animations/colorChange.css";
 import "../styles/animations/waving.css";
 import "../styles/theme.css";
-import { colors } from "../styles/theme";
+import SiteLayout from "../layouts/SiteLayout.astro";
 import ArtDivider from "../components/kit/ArtDivider.astro";
 import Card from "../components/Card.astro";
-import SiteLayout from "../layouts/SiteLayout.astro";
 const allPosts = await Astro.glob("../pages/blog/*.md");
-console.log(colors.redColor)
 ---
-<SiteLayout pageTitle="hellaz" >
-  <div class="blog-index">
-    <!-- <ArtDivider height="1rem" borderTop="none"/> -->
-    <h2 class="blog-index--title">
+<SiteLayout pageTitle="the blog" >
+  <div class="blog">
+    <h2 class="blog__title">
       <span class="--light-text">the </span>blog
     </h2>
-    
-    <div class="blog-index--entries">
+    <div class="blog__entries">
       { allPosts.map((post, index, {length}) => {
         if (index + 1 === length) {
           return (
-        <div class="blog-index--entry">
-          <Card post={post}/>
-        </div>
-        <ArtDivider height="0.7rem" width="100%" 
-          borderBottom="none"
-        />
-      )
+            <div class="blog__entry">
+              <Card post={post}/>
+            </div>
+            <ArtDivider height="0.7rem" width="100%" 
+              borderBottom="none"
+            />
+          )
         }
         return (
-        <div class="blog-index--entry">
-          <Card post={post}/>
-        </div>
-        <ArtDivider height="1rem" width="100%" 
-        
-        />
-      )
-      }
-      )}
+          <div class="blog__entry">
+            <Card post={post}/>
+          </div>
+          <ArtDivider height="1rem" width="100%" />
+        )
+      })}
     </div>
   </div>
 </SiteLayout>
+
 <style>
-.blog-index {
-  width: 100%;
-  background-color: white;
-}
-.blog-index--entry {
+  .blog {
+    width: 100%;
+    background-color: white;
+  }
+  .blog__title{
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: var(--border-width) solid;
+  }
+  .blog__entry {
     width: 90%;
     display: grid;
-    /* justify-content: center; */
     margin-left: auto;
     margin-right: auto;
     margin-top: 2rem;    
   }
-  .blog-index--entries {
+  .blog__entries {
     display: grid;
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
   }
-  .blog-index--title{
-    text-align: center;
-    padding: 2rem 0;
-    border-bottom: var(--border-width) solid;
-  }
-
   @media screen and (min-width: 1000px) {
-    .blog-index--entries {
+    .blog__entries {
       max-width: 50rem;
     }
-}
-
+  }
 </style>

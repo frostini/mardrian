@@ -1,20 +1,18 @@
 ---
 import "../styles/animations/colorChange.css";
 import "../styles/animations/waving.css";
-import "../styles/theme.css";
-import Mardrian from "../components/backgrounds/Mardrian.astro";
-import TitleText from "../components/atoms/TitleText.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
+import Mardrian from "../components/backgrounds/Mardrian.astro";
 ---
-<SiteLayout pageTitle="hellaz">
+<SiteLayout pageTitle="Marlon Frausto">
   <Mardrian containerHeight="100%">
     <div id="home" class="hero">
       <div class="hero__content">
         <div class="hero__content--fixed-width">
-          <h1>Hello <span class="waving">👋</span></h1>
+          <h1>Hello <span class="animation--waving">👋</span></h1>
           <h3 class="--light-text">thanks for visiting my site </h3>
-          <p>I'm a full-stack designer + developer specializing in component-based design systems, customer development, and lean/agile methodologies.</p>
-          <h5>
+          <p class="--margin-top">I'm a full-stack designer + developer specializing in component-based design systems, customer development, and lean/agile methodologies.</p>
+          <h5 class="--margin-top">
             <a href="/#about">about</a> 
             <span class="--light-text">|</span>
             <a href="/blog">blog</a>
@@ -43,18 +41,20 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     </div>
   </div>
 </SiteLayout>
+
 <style>
   .hero {
     display: grid;
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 1fr 6fr 1fr;
+    grid-template-areas: 
+    ". . ."
+    "hero hero hero"
+    ". . ."
   }
   .hero__content {
     display: grid;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-area: hero;
     background-color: white;
     place-items: center;
     border: var(--border-width) solid var(--dark-color);

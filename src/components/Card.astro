@@ -1,62 +1,39 @@
 ---
 import TagCloud from "./kit/TagCloud.astro";
-import ArtDivider from "./kit/ArtDivider.astro";
 const { post } = Astro.props;
-const titleHolder = "react vs framework, then vs now";
 ---
 <div class="card">
-  <div class="title">
+  <div class="card__title">
     <h4 >
-      { post ?
       <a href={ post.url}>
-      { post.frontmatter.title }
+        { post.frontmatter.title }
       </a>
-      : titleHolder  
-      }
     </h4>
   </div>
-  <div class="tags">
-    <h6>tags</h6>
+  <div class="card__tags">
+    <h6 class="--margin-right">tags</h6>
     <TagCloud tags={post.frontmatter.tags}/>
   </div>
-  
-  <div class="meta">
-    <!-- <h6>{post.frontmatter.category || "design"}</h6> -->
+  <div class="card__last-update">
     <i>last updated on {post.frontmatter.pubDate.slice(0,10)}</i>
   </div>
-  <!-- <ArtDivider/> -->
 </div>
+
 <style>
-  .tags {
-    display: flex;
-    align-items: center;
-    /* grid-template-columns: 2fr 6fr; */
-    /* place-items: center; */
-  }
-  .title {
-    padding-bottom: 1rem;
-  }
-  .title h4 {
-    /* text-align: center; */
-  }
-  .tags h6 {
-    margin-right: 1rem;
-  }
   .card {
-    padding: 1rem;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-around; */
-    /* align-items: center; */
+    padding: 1rem;
   }
-  .card h6 {
-    text-align: center;
+  .card__title {
+    padding-bottom: 1rem;
   }
-  .meta {
-    display: grid;
+  .card__tags {
+    display: flex;
+    align-items: center;
+  }
+  .card__last-update {
     text-align: right;
-    /* grid-template-columns: 2fr 6fr; */
-    /* align-items: center; */
-    margin: calc(var(--border-width));
+    padding: calc(var(--border-width));
   }
 </style>
