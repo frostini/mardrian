@@ -4,39 +4,40 @@
   padding: var(--size-300);
 }
 .post-template--container {
-  width: 90%;
+  /* width: 95%; */
   max-width: 50rem;
   margin-left: auto;
   margin-right: auto;
 }
 .post-template h1 {
   padding: calc(var(--size-1000) * 0.7) 0;
-  font-size: calc(var(--size-1000) * 0.8);
+  font-size: calc(var(--size-1000) * 0.9);
 }
 .post-template h2 {
-  padding: calc(var(--size-900) * 0.8) 0;
-  font-size: calc(var(--size-900) * 0.8);
+  padding: calc(var(--size-900) * 0.5) 0;
+  font-size: calc(var(--size-900) * 0.9);
 }
 .post-template h3 {
   padding: calc(var(--size-800) * 0.8) 0;
-  font-size: calc(var(--size-800) * 0.8);
+  font-size: calc(var(--size-800) * 0.9);
 }
 .post-template h4 {
   padding: calc(var(--size-700) * 0.8) 0;
-  font-size: calc(var(--size-700) * 0.8);
+  /* font-size: calc(var(--size-700) * 0.8); */
 }
 .post-template h5 {
   padding: calc(var(--size-600) * 0.8) 0;
-  font-size: calc(var(--size-600) * 0.8);
+  /* font-size: calc(var(--size-600) * 0.8); */
 }
 .post-template h6 {
   padding: calc(var(--size-500) * 0.5) 0;
-  font-size: calc(var(--size-500) * 0.8);
+  /* font-size: calc(var(--size-500) * 0.8); */
 }
 .post-template pre.astro-code.github-dark > code,
 pre {
   padding: 1rem !important;
   margin: 1rem 0 !important;
+  /* font-size: calc(var(--size-600) * 0.1) !important; */
 }
 .post-template ol,
 .post-template ul {
@@ -44,7 +45,7 @@ pre {
   padding: calc(var(--size-500) * 0.5) 0;
 }
 .post-template li {
-  padding: calc(var(--size-500) * 0.1) 0;
+  /* padding: calc(var(--size-300) * 0.1) 0; */
 }
 .post-template p {
   padding: calc(var(--size-500) * 0.5) 0;
@@ -52,7 +53,7 @@ pre {
 
 blockquote {
   padding: 1rem;
-  margin: 1rem 0 1rem 2rem;
+  margin: 1rem 0 1rem 1rem;
   border-left: 0.5rem solid var(--grey-color);
   background-color: var(--light-grey-color);
 }

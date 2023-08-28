@@ -1,24 +1,32 @@
 @import '@fontsource-variable/montserrat';
 :root {
-  --red-color: #C32F29;
+  --red-color: #a8140e;
+  /* --red-color: #C32F29; */
+  /* a8140e */
   /* --blue-color: #271AC2; */
   --white-color: #fff;
-  --blue-color: #3122D9;
-  --yellow-color: #F9CC37;
+  /* --blue-color: #3122D9; */
+  --blue-color:#170bb1;
+  /* #170bb1 */
+  /* #130990 */
+  --yellow-color: #f1be15;
+  /* #e0b113; */
+  /* d5a70e; */
+  /* --yellow-color: #F9CC37; */
   --grey-color:   #727171;
   --light-grey-color: #D9D9D9;
   --dark-color: #23262d;
   --base-type-size: 100%;
-  --size-300: clamp(0.7rem, 0.66rem + 0.2vw, 0.8rem);
-  --size-400: clamp(0.88rem, 0.83rem + 0.24vw, 1rem);
-  --size-500: clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
+  --size-300: clamp(0.88rem, 0.83rem + 0.24vw, 1rem);
+  --size-400: clamp(1.09rem, 1rem + 0.47vw, 1.33rem);
+  --size-500: clamp(1.22rem, 1.06rem + 0.8vw, 1.63rem);
   --size-600: clamp(1.37rem, 1.21rem + 0.8vw, 1.78rem);
   --size-700: clamp(1.71rem, 1.45rem + 1.29vw, 2.37rem);
   --size-800: clamp(2.14rem, 1.74rem + 1.99vw, 3.16rem);
   --size-900: clamp(2.67rem, 2.07rem + 3vw, 4.21rem);
-  --size-1000: clamp(3.34rem, 2.45rem + 4.43vw, 5.61rem);
-  --thin-font: 400;
-  --border-width: 0.4rem;
+  --size-1000: clamp(3rem, 2.45rem + 4.13vw, 5.30rem);
+  --light-font: 400;
+  --border-width: clamp(0.33rem, 0.4rem, 1rem);
 }
 * {
   margin: 0;
@@ -32,14 +40,9 @@ html,
 body {
   height: 100%;
   min-height: 100dvh;
-  /* min-height: 0; */
   background-color: var(--dark-color);
-  /* overflow: auto; */
   font-size: var(--base-type-size);
 }
-
-
-
 h1,
 .h1 {
   font-size: var(--size-1000);
@@ -76,9 +79,12 @@ p,
   line-height: 1.5;
   padding: 0;
 }
-.light-text {
-  font-weight: var(--thin-font);
+.--light-text {
+  font-weight: var(--light-font);
 }
 a {
   color: var(--dark-color);
+}
+.--margin-top {
+  margin-top: 1rem;
 }

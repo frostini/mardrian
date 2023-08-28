@@ -8,61 +8,48 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 <SiteLayout pageTitle="hellaz">
   <Mardrian containerHeight="100%">
-    <div id="home" class="hero-text">
-      <div class="hero">
-        <div class="her">
+    <div id="home" class="hero">
+      <div class="hero__content">
+        <div class="hero__content--fixed-width">
           <h1>Hello <span class="waving">👋</span></h1>
-          <h3 class=" light-text">thanks for visiting my site </h3>
-          <!-- <span class="">😬</span>  -->
-          <h6 class="light-text" style="margin-top:1rem;">I'm a full-stack designer + developer specializing in component-based design systems, customer development, and lean/agile methodologies.</h6>
-          <h5 style="margin-top:1rem;"><a href="/#about">about</a> <span class="light-text">|</span> <a href="/blog">blog</a> <span class="light-text">|</span> <a href="/contact">contact / hire</a></h5>
+          <h3 class="--light-text">thanks for visiting my site </h3>
+          <p>I'm a full-stack designer + developer specializing in component-based design systems, customer development, and lean/agile methodologies.</p>
+          <h5>
+            <a href="/#about">about</a> 
+            <span class="--light-text">|</span>
+            <a href="/blog">blog</a>
+            <span class="--light-text">|</span>
+            <a href="/contact">contact / hire</a>
+          </h5>
         </div>
       </div>
     </div>
   </Mardrian>
-  <div  id="about">
-      <div class="about-section">
-        <h2 class="light-text">About <b>Me</b></h2>
-        <h6 class="light-text" style="margin-top:1rem;">
-          I&#8217;m Marlon Frausto (he/him) and I work as a full-stack engineer specializing in component-based design systems, production-grade APIs, customer development, and agile/lean methodologies. 
-        </h6>
-        <h6 class="light-text" style="margin-top:1rem;">
-          I trained as an engineer in San Francisco, CA, at the world&#8217;s first coding bootcamp in 2014, and have been coding professionally ever since. 
-        </h6>
-        <h6 class="light-text" style="margin-top:1rem;">
-          Most recently I helped co-found multitaskr as CTO and have since moved on to build an independent consulting practice.
-        </h6>
-        <h6 class="light-text" style="margin-top:1rem;">
-          You can find out about the latest tools, problems, or products I&#8217;m working on by checking out my blog.
-        </h6>
-      </div>
+  <div id="about" class="about">
+    <div class="about__content">
+      <h2 class="--light-text">About <b>Me</b></h2>
+      <p class="--light-text --margin-top">
+        I&#8217;m Marlon Frausto (he/him) and I work as a full-stack engineer specializing in component-based design systems, production-grade APIs, customer development, and agile/lean methodologies. 
+      </p>
+      <p class="--light-text --margin-top">
+        I trained as an engineer in San Francisco, CA, at the world&#8217;s first coding bootcamp in 2014, and have been coding professionally ever since. 
+      </p>
+      <p class="--light-text --margin-top">
+        Most recently I helped co-found multitaskr as CTO and have since moved on to build an independent consulting practice.
+      </p>
+      <p class="--light-text --margin-top">
+        You can find out about the latest tools, problems, or products I&#8217;m working on by checking out my blog.
+      </p>
+    </div>
   </div>
 </SiteLayout>
 <style>
-  .about-section {
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  #about {
-    /* height: 100%; */
-    /* min-height: 0; */
-    /* flex-grow: 1; */
-    background-color: var(--white-color);
-    margin-top: var(--border-width);
-    padding: calc(var(--border-width) * 3) 0;
-    /* scroll-behavior: smooth; */
-    /* padding: var(--size-500); */
-    /* display: flex; */
-    /* align-items: center; */
-    
-  }
-  .her {
-    max-width: 90%;
-    display: grid;
-    justify-content: center;
-  }
   .hero {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 6fr 1fr;
+  }
+  .hero__content {
     display: grid;
     grid-column-start: 1;
     grid-column-end: 4;
@@ -73,21 +60,27 @@ import SiteLayout from "../layouts/SiteLayout.astro";
     border: var(--border-width) solid var(--dark-color);
     border-style: solid none;
   }
-  .hero-text {
+  .hero__content--fixed-width {
+    max-width: 90%;
     display: grid;
-    grid-template-columns: 1fr 6fr 1fr;
-    grid-template-rows: 1fr 6fr 1fr;
+    justify-content: center;
   }
-  p {
-    padding: 1rem 0;
+  .about {
+    background-color: var(--white-color);
+    margin-top: var(--border-width);
+    padding: calc(var(--border-width) * 3) 0;
+  }
+  .about__content {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
   }
   @media screen and (min-width: 1000px) {
-    .her {
+    .hero__content--fixed-width {
       width: 50rem;
     }
-    .about-section {
+    .about__content {
       width: 50rem;
     }
-}
-
+  }
 </style>

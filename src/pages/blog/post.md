@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: 'My First Blog Post'
+title: 'Debugging Astro Project on mobile devices'
 pubDate: 2022-07-01
 lastUpdate: "August 4th, 2023"
 category: 'design'

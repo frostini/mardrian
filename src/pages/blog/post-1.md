@@ -11,16 +11,16 @@ image:
     alt: 'The full Astro logo.'
 tags: ["astro", "blogging", "learning", "learning"]
 ---
-# What I've accompli shejhjhd
+# What I've accomplished
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come. I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come. I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come. I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
 
-## What I've accompli shejhjhd
+## What I've accomplished
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come. I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come. I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come. I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come. I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
 
-### What I've accompli shejhjhd
+### What I've accomplished
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come. I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come. I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come. I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
 
-#### What I've accompli shejhjhd
+#### What I've accomplished
     I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
 
 &emsp; I will finish the Astro tutorial, and then keep adding more posts.
@@ -45,7 +45,7 @@ I will finish the Astro tutorial, and then keep adding more posts. Watch this sp
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
 ##### What I've accompli shejhjhd
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.
-###### What I've accompli shejhjhd
+###### What I've accompli H6
 I will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.  
 
 > IIIII will finish the Astro tutorial, and then keep adding more posts. Watch this space for more to come.

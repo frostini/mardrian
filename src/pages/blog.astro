@@ -9,11 +9,11 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 const allPosts = await Astro.glob("../pages/blog/*.md");
 console.log(colors.redColor)
 ---
-<SiteLayout pageTitle="hellaz" pageColor="white">
+<SiteLayout pageTitle="hellaz" >
   <div class="blog-index">
     <!-- <ArtDivider height="1rem" borderTop="none"/> -->
     <h2 class="blog-index--title">
-      <span class="light-text">the </span>blog
+      <span class="--light-text">the </span>blog
     </h2>
     
     <div class="blog-index--entries">
@@ -42,7 +42,11 @@ console.log(colors.redColor)
   </div>
 </SiteLayout>
 <style>
-  .blog-index--entry {
+.blog-index {
+  width: 100%;
+  background-color: white;
+}
+.blog-index--entry {
     width: 90%;
     display: grid;
     /* justify-content: center; */
