@@ -1,59 +1,20 @@
 ---
 import "../styles/animations/colorChange.css";
 import "../styles/animations/waving.css";
-import "../styles/theme.css";
-import Mardrian from "../components/backgrounds/Mardrian.astro";
-import TitleText from "../components/atoms/TitleText.astro";
-import TagCloud from "../components/kit/TagCloud.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
-
+import Mardrian from "../components/backgrounds/Mardrian.astro";
+import HeroContent from "../components/HeroContent.astro";
 ---
-<SiteLayout pageTitle="hellaz">
+<SiteLayout pageTitle="contact / hire">
   <Mardrian containerHeight="100%">
-    <div class="hero-text">
-      <div class="hero">
-        <div class="her">
-          <h2>
-            <span class="--light-text">contact</span>
-            <span style="color:var(--blue-color);">/</span>
-            hire
-          </h2>
-          <h6 class="--light-text" style="margin-top:1rem;">Feel free to get in touch by writing me at <b>marlonjfrausto@gmail.com</b></h6>
-          <h6 class="--light-text" style="margin-top:1rem;">If you are interested in hiring me, please include a bit about the project/product you have in mind, start/end times, budget, and anything else you might deem relevant to start the conversation.</h6>
-          <h6 class="--light-text" style="margin-top:1rem;">I will usually respond to new inquiries within 2 working days. Looking forward to hearing from you!</h6>
-          <!-- <h6 class="--light-text" style="margin-top:1rem;">Thank you and looking foward to hearing from you!</h6> -->
-        </div>
-      </div>
-    </div>
+    <HeroContent placeContent="center">
+      <h2>
+        <span class="--thin-text">contact</span>
+        <span class="--blue-color">/</span>
+        hire
+      </h2>
+      <h6 class="--thin-text --margin-top">Feel free to get in touch by writing me at <b>marlonjfrausto@gmail.com</b></h6>
+      <h6 class="--thin-text --margin-top">If you are interested in hiring me, please include a bit about the project/product you have in mind, start/end times, budget, and anything else you might deem relevant to start the conversation.</h6>
+    </HeroContent>
   </Mardrian>
 </SiteLayout>
-<style>
-  .her {
-    max-width: 90%;
-    display: grid;
-    justify-content: center;
-    /* height: 100%; */
-  }
-  .hero {
-    display: grid;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    background-color: white;
-    /* padding: var(--size-300); */
-    place-items: center;
-    border: var(--border-width) solid var(--dark-color);
-    border-style: solid none;
-  }
-  .hero-text {
-    display: grid;
-    grid-template-columns: 1fr 6fr 1fr;
-    grid-template-rows: 1fr 6fr 1fr;
-  }
-  @media screen and (min-width: 1000px) {
-    .her {
-      width: 50rem;
-    }
-  }
-</style>

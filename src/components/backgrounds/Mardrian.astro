@@ -1,5 +1,4 @@
 ---
-import "../../styles/theme.css";
 import "../../styles/animations/colorChange.css";
 const { containerHeight } = Astro.props;
 ---
@@ -69,11 +68,10 @@ const { containerHeight } = Astro.props;
   .content {
     z-index: 1;
     display: grid;
-    grid-column: 1; 
+    grid-column: 1;
     grid-row: 1;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    min-height: 0;
   }
   @keyframes gridRowResize {
     0% {
@@ -99,10 +97,7 @@ const { containerHeight } = Astro.props;
     }
   }
 /* to switch colorchange positions to match header vertical position swap */
-  @media screen and (min-width: 600px) {
-    /* .grid {
-      gap: var(--border-width);
-    } */
+  @media screen and (min-width: 700px) {
     .grid-row {
       gap: var(--border-width);
     }

@@ -1,7 +1,6 @@
 ---
 import "../styles/animations/colorChange.css";
 import "../styles/animations/waving.css";
-import "../styles/theme.css";
 import SiteLayout from "../layouts/SiteLayout.astro";
 import ArtDivider from "../components/kit/ArtDivider.astro";
 import Card from "../components/Card.astro";
@@ -10,7 +9,7 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
 <SiteLayout pageTitle="the blog" >
   <div class="blog">
     <h2 class="blog__title">
-      <span class="--light-text">the </span>blog
+      <span class="--thin-text">the </span>blog
     </h2>
     <div class="blog__entries">
       { allPosts.map((post, index, {length}) => {
@@ -28,7 +27,7 @@ const allPosts = await Astro.glob("../pages/blog/*.md");
           <div class="blog__entry">
             <Card post={post}/>
           </div>
-          <ArtDivider height="1rem" width="100%" />
+          <ArtDivider height="1rem" width="100%"/>
         )
       })}
     </div>

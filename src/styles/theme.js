@@ -1,8 +1,8 @@
 export const colors = {
-  redColor: '#C32F29',
-  blueColor: '#271AC2',
+  redColor: '#a8140e',
+  blueColor: '#170bb1',
   whiteColor: '#fff',
-  yellowColor: '#F9CC37',
+  yellowColor: '#f1be15',
   greyColor:   '#727171',
   lightGreyColor: '#D9D9D9',
   darkColor: '#23262d',

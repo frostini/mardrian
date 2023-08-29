@@ -2,42 +2,38 @@
 import SiteLayout from "./SiteLayout.astro";
 import "../styles/animations/colorChange.css";
 // import "../styles/animations/waving.css";
-// import "../styles/code.css";
-// import "../styles/theme.css";
-import "../styles/blogTheme.css";
+import "../styles/post-layout.css";
 import MardrianStatic from "../components/backgrounds/MardrianStatic.astro";
+import HeroContent from "../components/HeroContent.astro";
 import TagCloud from "../components/kit/TagCloud.astro";
 const { frontmatter } = Astro.props;
 ---
 <SiteLayout pageTitle={frontmatter.title}>
   <MardrianStatic containerHeight="100%">
-    <div class="hero-text">
-      <div class="hero">
-        <div class="her">
-          <div style="">
-            <h4 style="color:var(--blue-color);">
-              <span style="color:var(--dark-color)">blog</span> / {frontmatter.category}
-            </h4>
-            <h1>          
-              {frontmatter.title}
-            </h1>
-          </div>
-          <div class="summary">
-            <h5>Summary</h5>
-            <h6 class="--light-text">
-              {frontmatter.description}
-            </h6>
-          </div>
-          <div class="tags">
-            <h5>Tags</h5>
-            <TagCloud tags={frontmatter.tags}/>
-          </div>
-          <div>
-            <i>last updated on {frontmatter.lastUpdate}</i>
-          </div>
-        </div>
+    <HeroContent>
+      <div class="post-template__title">
+        <h4 class="--thin-text">
+          blog
+          <span class="--blue-color --thicc-text">/ {frontmatter.category}</span> 
+        </h4>
+        <h1>          
+          {frontmatter.title}
+        </h1>
       </div>
-    </div>
+      <div class="post-template__summary">
+        <h5>Summary</h5>
+        <h6 class="--thin-text">
+          {frontmatter.description}
+        </h6>
+      </div>
+      <div class="post-template__tags">
+        <h5>Tags</h5>
+        <TagCloud tags={frontmatter.tags}/>
+      </div>
+      <div>
+        <i>last updated on {frontmatter.lastUpdate}</i>
+      </div>
+    </HeroContent>
   </MardrianStatic>
   <div class="post-template">
     <div class="post-template--container">
@@ -47,56 +43,14 @@ const { frontmatter } = Astro.props;
 </SiteLayout>
 
 <style>
-  .her div:nth-child(2) h6 {
-    margin-top: var(--size-300);
-  }
-  .her div:nth-child(2),
-  .her div:nth-child(3) {
-    display: flex;
-    flex-direction: column;
-  }
-  .her div:nth-child(4) {
-    align-self: end;
-  }
-  .her {
-    width: 50rem;
-    max-width: 90dvw;
-    display: grid;
-    justify-content: center;
-    height: 100%;
-    /* grid-template-rows: minmax(0, 1fr); */
-  }
-  .hero {
-    display: grid;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    background-color: white;
-    padding: var(--size-300);
-    place-items: center;
-    border: var(--border-width) solid var(--dark-color);
-    border-style: solid none;
-  }
-  .hero-text {
-    display: grid;
-    grid-template-columns: 1fr 6fr 1fr;
-    grid-template-rows: 1fr 6fr 1fr;
-  }
-  /* .summary, */
-  .tags {
+    .post-template__summary,
+    .post-template__tags {
     display: none !important;
   }
-  @media screen and (min-width: 500px) and (min-height: 450px) {
-    .summary,
-    .tags {
+  @media screen and (min-width: 700px) {
+    .post-template__summary,
+    .post-template__tags {
       display: block !important;
     }
-}
-@media screen and (min-width: 1000px) {
-    .her {
-      width: 50rem;
-    }
-}
-
+  }
 </style>

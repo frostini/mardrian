@@ -1,0 +1,44 @@
+---
+import "../styles/animations/colorChange.css";
+import "../styles/animations/waving.css";
+const { idName = "", placeContent = "space-evenly"} = Astro.props;
+---
+<div id={ idName } class="hero">
+  <div class="hero__content">
+    <div class="hero__content--fixed-width">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<style define:vars={{ placeContent }}>
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 6fr 1fr;
+    grid-template-areas: 
+    ". . ."
+    "hero hero hero"
+    ". . .";
+    /* overflow: scroll; */
+  }
+  .hero__content {
+    display: grid;
+    grid-area: hero;
+    background-color: white;
+    border: var(--border-width) solid var(--dark-color);
+    border-style: solid none;
+  }
+  .hero__content--fixed-width {
+    max-width: 90%;
+    display: grid;
+    place-content: var(--placeContent);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media screen and (min-width: 1000px) {
+    .hero__content--fixed-width {
+      width: 50rem;
+    }
+  }
+</style>

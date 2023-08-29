@@ -1,33 +1,24 @@
 ---
 const { tags } = Astro.props
 ---
-<ul class="tag-cloud --light-text p">
-  { tags ?
-    tags.map((tag) => (
+<ul class="tag-cloud --thin-text --p">
+  { tags.map((tag) => (
     <li>
-      {tag}
+      { tag }
     </li>
-  )) :
-    <li><a href="">example</a></li>
-    <li><a href="">example</a></li>
-    <li><a href="">example</a></li>
-    <li><a href="">example</a></li>
-  }
+  ))}
 </ul>
 <style>
+.tag-cloud {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.5rem 0rem;
+}
 .tag-cloud li {
   list-style-type: none;
-  padding: .2rem;
+  padding: var(--border-width);
   margin: .2rem;
   border: .2rem solid var(--dark-color);
 }
-.tag-cloud li a {
-  text-decoration: none;
-}
-.tag-cloud {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0.5rem 0rem;
-  }
 </style>

@@ -3,39 +3,39 @@ import "../styles/animations/colorChange.css";
 import "../styles/animations/waving.css";
 import SiteLayout from "../layouts/SiteLayout.astro";
 import Mardrian from "../components/backgrounds/Mardrian.astro";
+import HeroContent from "../components/HeroContent.astro";
 ---
 <SiteLayout pageTitle="Marlon Frausto">
   <Mardrian containerHeight="100%">
-    <div id="home" class="hero">
-      <div class="hero__content">
-        <div class="hero__content--fixed-width">
-          <h1>Hello <span class="animation--waving">👋</span></h1>
-          <h3 class="--light-text">thanks for visiting my site </h3>
-          <p class="--margin-top">I'm a full-stack designer + developer specializing in component-based design systems, customer development, and lean/agile methodologies.</p>
-          <h5 class="--margin-top">
-            <a href="/#about">about</a> 
-            <span class="--light-text">|</span>
-            <a href="/blog">blog</a>
-            <span class="--light-text">|</span>
-            <a href="/contact">contact / hire</a>
-          </h5>
-        </div>
+    <HeroContent idName="home" placeContent="center">
+      <div>
+        <h1>Hello <span class="animation--waving">👋</span></h1>
+        <h3 class="--thin-text">thanks for visiting my site </h3>
       </div>
-    </div>
+
+      <p class="--margin-top">I'm a full-stack designer + developer specializing in component-based design systems, customer development, and lean/agile methodologies.</p>
+      <h5 class="--margin-top">
+        <a href="/#about">about</a> 
+        <span class="--thin-text">|</span>
+        <a href="/blog">blog</a>
+        <span class="--thin-text">|</span>
+        <a href="/contact">contact / hire</a>
+      </h5>
+    </HeroContent>
   </Mardrian>
   <div id="about" class="about">
     <div class="about__content">
-      <h2 class="--light-text">About <b>Me</b></h2>
-      <p class="--light-text --margin-top">
+      <h2 class="--thin-text">About <b>Me</b></h2>
+      <p class="--margin-top">
         I&#8217;m Marlon Frausto (he/him) and I work as a full-stack engineer specializing in component-based design systems, production-grade APIs, customer development, and agile/lean methodologies. 
       </p>
-      <p class="--light-text --margin-top">
+      <p class="--margin-top">
         I trained as an engineer in San Francisco, CA, at the world&#8217;s first coding bootcamp in 2014, and have been coding professionally ever since. 
       </p>
-      <p class="--light-text --margin-top">
+      <p class="--margin-top">
         Most recently I helped co-found multitaskr as CTO and have since moved on to build an independent consulting practice.
       </p>
-      <p class="--light-text --margin-top">
+      <p class="--margin-top">
         You can find out about the latest tools, problems, or products I&#8217;m working on by checking out my blog.
       </p>
     </div>
@@ -43,42 +43,20 @@ import Mardrian from "../components/backgrounds/Mardrian.astro";
 </SiteLayout>
 
 <style>
-  .hero {
-    display: grid;
-    grid-template-columns: 1fr 6fr 1fr;
-    grid-template-rows: 1fr 6fr 1fr;
-    grid-template-areas: 
-    ". . ."
-    "hero hero hero"
-    ". . ."
-  }
-  .hero__content {
-    display: grid;
-    grid-area: hero;
-    background-color: white;
-    place-items: center;
-    border: var(--border-width) solid var(--dark-color);
-    border-style: solid none;
-  }
-  .hero__content--fixed-width {
-    max-width: 90%;
-    display: grid;
-    justify-content: center;
-  }
   .about {
     background-color: var(--white-color);
     margin-top: var(--border-width);
     padding: calc(var(--border-width) * 3) 0;
+    min-height: 100%;
+    display: grid;
+    place-items: center;
   }
   .about__content {
-    max-width: 90%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
   }
   @media screen and (min-width: 1000px) {
-    .hero__content--fixed-width {
-      width: 50rem;
-    }
     .about__content {
       width: 50rem;
     }
