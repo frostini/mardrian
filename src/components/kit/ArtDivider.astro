@@ -72,7 +72,6 @@ const {
 }}>
   .art-divider {
     border: var(--lineWidth) solid var(--dark-color);
-    /* outline: 0.3rem solid var(--dark-color); */
     border-style: var(--borderTop) none var(--borderBottom);
     display: grid;
     gap: var(--lineWidth);
@@ -106,11 +105,9 @@ const {
     background-color: var(--fifthColor);
     grid-column: var(--ninthColumnValue)/var(--tenthColumnValue);
   }
-
   @media screen and (min-width: 1000px) {
     .art-divider { 
-      border-style: solid solid var(--borderBottom) solid;
-      /* outline: none; */
+      border-style: var(--borderTop) solid var(--borderBottom) solid;
     }
 
 }

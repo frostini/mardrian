@@ -17,6 +17,7 @@
   --size-900: clamp(2.67rem, 2.07rem + 3vw, 4.21rem);
   --size-1000: clamp(3rem, 2.45rem + 4.13vw, 5.30rem);
   --thin-text: 300;
+  --regular-text: 500;
   --thicc-text: 700;
   --border-width: clamp(0.33rem, 0.4rem, 1rem);
 }
@@ -27,6 +28,7 @@
 }
 :not(pre, code, span) > * {
   font-family: montserrat, sans-serif !important;
+  font-weight: var(--regular-text);
 }
 html,
 body {

@@ -1,8 +1,7 @@
 ---
-import SiteLayout from "./SiteLayout.astro";
-import "../styles/animations/colorChange.css";
-// import "../styles/animations/waving.css";
 import "../styles/post-layout.css";
+import "../styles/animations/colorChange.css";
+import SiteLayout from "./SiteLayout.astro";
 import MardrianStatic from "../components/backgrounds/MardrianStatic.astro";
 import HeroContent from "../components/HeroContent.astro";
 import TagCloud from "../components/kit/TagCloud.astro";
@@ -11,45 +10,49 @@ const { frontmatter } = Astro.props;
 <SiteLayout pageTitle={frontmatter.title}>
   <MardrianStatic containerHeight="100%">
     <HeroContent>
-      <div class="post-template__title">
+      <div class="post-layout__title">
         <h4 class="--thin-text">
           blog
-          <span class="--blue-color --thicc-text">/ {frontmatter.category}</span> 
+          <span class="--blue-color --thicc-text">
+            / {frontmatter.category}
+          </span> 
         </h4>
         <h1>          
           {frontmatter.title}
         </h1>
       </div>
-      <div class="post-template__summary">
+      <div class="post-layout__summary">
         <h5>Summary</h5>
         <h6 class="--thin-text">
           {frontmatter.description}
         </h6>
       </div>
-      <div class="post-template__tags">
+      <div class="post-layout__tags">
         <h5>Tags</h5>
         <TagCloud tags={frontmatter.tags}/>
       </div>
       <div>
-        <i>last updated on {frontmatter.lastUpdate}</i>
+        <i>
+          last updated on {frontmatter.lastUpdate}
+        </i>
       </div>
     </HeroContent>
   </MardrianStatic>
-  <div class="post-template">
-    <div class="post-template--container">
+  <div class="post-layout">
+    <div class="post-layout--container">
       <slot />
     </div>
   </div>
 </SiteLayout>
 
 <style>
-    .post-template__summary,
-    .post-template__tags {
+    .post-layout__summary,
+    .post-layout__tags {
     display: none !important;
   }
   @media screen and (min-width: 700px) {
-    .post-template__summary,
-    .post-template__tags {
+    .post-layout__summary,
+    .post-layout__tags {
       display: block !important;
     }
   }

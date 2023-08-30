@@ -1,9 +1,9 @@
 ---
 const { tags } = Astro.props
 ---
-<ul class="tag-cloud --thin-text --p">
+<ul class="tag-cloud">
   { tags.map((tag) => (
-    <li>
+    <li class="--thin-text --p">
       { tag }
     </li>
   ))}
